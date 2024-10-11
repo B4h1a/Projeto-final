@@ -1,0 +1,619 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111;
+    padding: 10px 20px;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+
+
+
+.logo a {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+
+
+.navbar {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+.menu-item {
+    position: relative;
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+}
+
+
+
+
+.menu-item:hover {
+    color: #0F4AA7;
+}
+
+
+
+
+.dropdown {
+    position: fixed;
+    top: 67px;
+    /* Ajuste de posicionamento abaixo do header */
+    left: 0;
+    width: 100vw;
+    /* Cobrir toda a largura da tela */
+    background-color: #333;
+    padding: 20px 0;
+    z-index: 999;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+
+.submenu-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+
+
+
+.dropdown a {
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+.dropdown a:hover {
+    background-color: #555;
+}
+
+
+
+
+.extra-menu {
+    display: flex;
+    gap: 20px;
+}
+
+
+
+
+.extra-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+.extra-menu .my-aorus {
+    border: 1px solid white;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+.extra-menu .my-aorus .icon {
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+    background: url("https://cdn-icons-png.flaticon.com/512/124/124727.png") no-repeat center center;
+    background-size: contain;
+}
+
+
+
+
+.extra-menu a:hover {
+    color: #0F4AA7;
+    border-color: #0F4AA7;
+}
+
+
+
+
+.banner {
+    display: block;
+    max-width: 100%;
+    margin-top: 70px;
+    height: auto;
+    background-color: var(--img-color);
+}
+
+label {
+    display: block;
+    cursor: pointer;
+    background-color: #0F4AA7;
+
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.inicio {
+    background-color: black;
+}
+
+input[type="radio"] {
+    position: absolute;
+    bottom: 0;
+    left: -9999px;
+}
+
+.linhaP {
+    text-align: center;
+    font-size: 30px;
+    color: white;
+}
+
+.produto {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 35px;
+}
+
+.nome {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 40px;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.gtx {
+    position: relative;
+    width: 100%;
+}
+
+.rtx {
+    width: 100%;
+    height: 800px;
+}
+
+.texto-gtx {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+.ftproduto {
+    transition: transform 0.3s ease; /* Suaviza a transformação */
+}
+
+.btn-produto:hover .ftproduto {
+    transform: scale(1.1); /* Aumenta a imagem em 10% */
+}
+
+.border-container {
+    position: relative;
+    align-items: center;
+    display: inline-block; /* Para ajustar o tamanho ao conteúdo */
+    width: 100%; /* Ou a largura desejada */
+}
+.btn {
+    color: var(--white);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 45px;
+    max-width: 160px;
+    position: relative;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+
+
+.btn-1 {
+
+    font-weight: 900;
+    position: relative;
+
+    svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 45px;
+    }
+
+    rect {
+        fill: none;
+        stroke: var(--white);
+        stroke-width: 2;
+        stroke-dasharray: 422, 0;
+        transition: all 0.35s linear;
+    }
+}
+
+
+:root {
+
+    --white: #fff;
+}
+
+
+/* Efeito hover */
+
+.btn-1:hover {
+    background: rgba(255, 255, 255, 0);
+    font-weight: 900;
+    letter-spacing: 1px;
+
+    rect {
+        stroke-width: 5;
+        stroke-dasharray: 15, 310;
+        stroke-dashoffset: 48;
+        transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+}
+
+
+.btn-1-produto {
+    display: flex;
+    flex-direction: column; /* Para empilhar a imagem e o texto */
+    align-items: center; /* Centraliza o texto abaixo da imagem */
+    position: relative; /* Necessário para a borda */
+
+}
+
+
+
+
+.btn-produto {
+    color: var(--white);
+    cursor: pointer;
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 45px;
+    max-width: 460px;
+    position: relative;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+
+
+.btn-1-produto {
+    display: flex;
+    flex-direction: column; /* Para empilhar a imagem e o texto */
+    align-items: center; /* Centraliza o texto abaixo da imagem */
+
+    svg {
+        position: absolute;
+        top: 89%;
+        left: 35px;
+        width: 400px;
+        height: 15%;
+        z-index: 1; /* Para que a borda fique atrás da imagem */
+    }
+
+    rect {
+        fill: none;
+        stroke: var(--white);
+        stroke-width: 2;
+        stroke-dasharray: 422, 0;
+        transition: all 0.35s linear;
+    }
+}
+
+
+:root {
+
+    --white: #fff;
+}
+
+
+/* Efeito hover */
+
+.btn-1-produto:hover {
+    background: rgba(255, 255, 255, 0);
+    font-weight: 900;
+    letter-spacing: 1px;
+
+    rect {
+        stroke-width: 5;
+        stroke-dasharray: 15, 310;
+        stroke-dashoffset: 48;
+        transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+}
+.btn-produto:hover .ftproduto {
+    transform: scale(1.1);
+}
+
+
+/* SLIDESHOW
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Esconde a parte das imagens fora do contêiner */
+  }
+  
+  .featured-wrapper {
+    position: relative;
+  }
+  
+  .featured-list {
+    display: grid;
+  }
+  
+  .featured-list li {
+    grid-column: 1;
+    grid-row: 1;
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Suaviza a transição de opacidade */
+    position: relative; /* Necessário para posicionar o temporizador dentro */
+  }
+  
+  .featured-list li img {
+    width: 100%; /* Ajusta a largura da imagem */
+  }
+  
+  .timer {
+    position: absolute;
+    bottom: 10px; /* Distância do fundo */
+    right: 10px; /* Alinhado à direita */
+    width: 5px; /* Largura da linha do temporizador */
+    height: 3px; /* Altura da linha do temporizador */
+    background-color: #0F4AA7; /* Cor do temporizador */
+    transition: width 1s linear; /* Suaviza a transição da altura */
+  }
+  
+  .dots {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .dots li {
+    margin-right: 8px; /* espaço entre os traços */
+  }
+  
+  .dots label {
+    display: inline-block;
+    width: 20px;
+    height: 8px;
+    background-color: white; /* Cor padrão */
+    cursor: pointer; /* Mostra que é clicável */
+    transform: skew(-20deg); /* Inclinação para criar o efeito de paralelepípedo */
+    transition: all 0.3s; /* Suavização para animação */
+  }
+  
+  .dots label:hover {
+    background: #0F4AA7; /* Cor ao passar o mouse */
+  }
+
+.thumb-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    margin-top: 20px;
+}
+
+.thumb-list label {
+    display: grid;
+}
+
+.thumb-list img,
+.thumb-list .outer {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.thumb-list .outer {
+    display: grid;
+    place-items: center;
+    transition: background 0.25s;
+}
+
+.thumb-list .inner {
+    font-size: 18px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.25s;
+}
+
+
+footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 50px 0;
+    position: relative;
+    /* Permite o posicionamento absoluto dentro do footer */
+}
+
+.footer-slogan {
+    font-size: 25px;
+    /* Tamanho da fonte */
+    position: absolute;
+    /* Permite posicionar o texto */
+    left: 26%;
+    /* Alinha à esquerda com um pequeno espaço */
+    color: white;
+    overflow: hidden;
+    /* Oculta partes excedentes */
+}
+
+.glitch {
+    position: relative;
+    font-size: 20px;
+    /* Tamanho da fonte */
+    color: white;
+    /* Cor do texto */
+    animation: glitch-anim 1s infinite;
+    /* Animação do glitch */
+}
+
+@keyframes glitch-anim {
+    0% {
+        text-shadow:
+            1px 0 red,
+            -1px 0 blue,
+            1px 1px green,
+            -1px -1px yellow;
+        /* Sombras de texto */
+        transform: translate(0);
+    }
+
+    25% {
+        text-shadow:
+            -1px -1px red,
+            1px 1px blue,
+            -1px 0 green,
+            1px 0 yellow;
+        transform: translate(-2px, -2px);
+    }
+
+    50% {
+        text-shadow:
+            1px 1px red,
+            -1px -1px blue,
+            0px 0 green,
+            -1px 1px yellow;
+        transform: translate(2px, 2px);
+    }
+
+    75% {
+        text-shadow:
+            -1px 1px red,
+            1px -1px blue,
+            0px 0 green,
+            1px 1px yellow;
+        transform: translate(-2px, 2px);
+    }
+
+    100% {
+        text-shadow:
+            1px 0 red,
+            -1px 0 blue,
+            1px 1px green,
+            -1px -1px yellow;
+        transform: translate(0);
+    }
+}
+
+hr {
+    border: 0;
+    /* Remove a borda padrão */
+    height: 1px;
+    /* Define a altura da linha */
+    background-color: #fff;
+    /* Cor da linha */
+    width: 70%;
+    /* Define a largura de 53.5% */
+    margin: 10px auto;
+    /* Centraliza o <hr> */
+}
+
+.container-footer {
+    display: flex;
+    justify-content: center;
+    /* Garante distribuição uniforme */
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap;
+    /* Permite as colunas se ajustarem em telas menores */
+}
+
+.column-footer {
+    flex-grow: 1;
+    /* Garante que todas as colunas cresçam uniformemente */
+    max-width: 25%;
+    /* Limita a largura máxima de cada coluna */
+    text-align: left;
+    /* Mantém o texto alinhado à esquerda */
+    padding: 0 10px;
+    /* Adiciona um pouco de padding para espaçamento */
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 14px;
+}
