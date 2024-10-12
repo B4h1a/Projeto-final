@@ -8,7 +8,7 @@
 .header {
     position: fixed;
     width: 100%;
-    z-index: 1;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,6 +26,11 @@
     font-size: 24px;
     font-weight: bold;
     text-decoration: none;
+}
+
+.logo a:hover{
+    color:#0F4AA7;
+    
 }
 
 
@@ -62,6 +67,7 @@
 
 .menu-item:hover {
     color: #0F4AA7;
+    font-weight: 600;
 }
 
 
@@ -194,7 +200,6 @@ input[type="radio"] {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 35px;
 }
 
 .nome {
@@ -401,11 +406,11 @@ input[type="radio"] {
   }
   
   .featured-list li {
+    position: relative; /* Necessário para que o temporizador fique dentro do contêiner da imagem */
     grid-column: 1;
     grid-row: 1;
     opacity: 0;
-    transition: opacity 0.5s ease; /* Suaviza a transição de opacidade */
-    position: relative; /* Necessário para posicionar o temporizador dentro */
+    transition: opacity 0.5s ease;
   }
   
   .featured-list li img {
@@ -414,20 +419,30 @@ input[type="radio"] {
   
   .timer {
     position: absolute;
-    bottom: 10px; /* Distância do fundo */
-    right: 10px; /* Alinhado à direita */
-    width: 5px; /* Largura da linha do temporizador */
-    height: 3px; /* Altura da linha do temporizador */
+    bottom: 70px; /* Posiciona no canto inferior */
+    right: 50px; /* Posiciona no canto direito */
+    width: 2px; /* Largura estreita para fazer o temporizador ficar em pé */
+    height: 35px; /* Altura inicial do temporizador */
     background-color: #0F4AA7; /* Cor do temporizador */
-    transition: width 1s linear; /* Suaviza a transição da altura */
+    transition: height 1s linear; /* Suaviza a transição da altura */
+    z-index: 10; /* Certifica-se de que está acima da imagem */
   }
-  
+  .timer2 {
+    position: absolute;
+    bottom: 70px; /* Posiciona no canto inferior */
+    right: 50px; /* Posiciona no canto direito */
+    width: 2px; /* Largura estreita para fazer o temporizador ficar em pé */
+    height: 35px; /* Altura inicial do temporizador */
+    background-color: #ffffff; /* Cor do temporizador */
+    transition: height 1s linear; /* Suaviza a transição da altura */
+    z-index: 10; /* Certifica-se de que está acima da imagem */
+  }
   .dots {
     display: flex;
     justify-content: center;
     position: absolute;
     bottom: 10px;
-    left: 50%;
+    left: 90%;
     transform: translateX(-50%);
   }
   
@@ -447,6 +462,11 @@ input[type="radio"] {
   
   .dots label:hover {
     background: #0F4AA7; /* Cor ao passar o mouse */
+  }
+
+  .dots label.selected {
+    background-color: #0F4AA7; /* Cor ao ser selecionado */
+    width: 120px; /* Largura maior quando selecionado */
   }
 
 .thumb-list {

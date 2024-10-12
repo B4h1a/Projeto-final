@@ -19,9 +19,9 @@ const Header = () => {
                 <div className="dropdown">
                   <div className="submenu-container">
                     <a href="/produto/1">Placa Mãe</a>
-                    <a href="/">Placas de Vídeo</a>
-                    <a href="/">Computador</a>
-                    <a href="/">Monitor</a>
+                    <a href="/produto/2">Placas de Vídeo</a>
+                    <a href="/produto/3">Computador</a>
+                    <a href="/produto/4">Monitor</a>
                   </div>
                 </div>
               )}

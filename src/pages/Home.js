@@ -32,10 +32,8 @@ export default function Home() {
   }, []);
 
   const handleDotClick = (index) => {
-    setCurrentIndex(index);
-    setTimeLeft(slideTime); // Reseta o temporizador ao mudar a imagem
+    setCurrentIndex(index); // atualiza o slide atual e seleciona o dot correspondente
   };
-
 
 
   const [isOpen, setIsOpen] = useState(false);
@@ -45,32 +43,35 @@ export default function Home() {
   };
   return (
     <div className="inicio">
-      <Header/>
+      <Header />
       <div className="carousel">
-        <div className="container">
-          <div className="featured-wrapper">
-            <ul className="featured-list">
-              {images.map((image, index) => (
-                <li key={index} style={{ opacity: currentIndex === index ? 1 : 0 }}>
-                  <figure>
-                    <img className='banner' src={image} alt="" />
-                  </figure>
-                </li>
-              ))}
-            </ul>
+  <div className="container">
+    <div className="featured-wrapper">
+      <ul className="featured-list">
+        {images.map((image, index) => (
+          <li key={index} style={{ opacity: currentIndex === index ? 1 : 0 }}>
+            <figure>
+              <img className="banner" src={image} alt="" />
+            </figure>
+            <div className='timer2'style={{ height: `${50}%` }}></div>
+            <div className="timer" style={{ height: `${(timeLeft / slideTime) * 50}%` }}></div>
+          </li>
+        ))}
+      </ul>
 
-            <div className="timer" style={{ width: `${(timeLeft / slideTime) * 100}%` }}></div>
-
-            <ul className="dots">
-              {images.map((_, index) => (
-                <li key={index}>
-                  <label onClick={() => handleDotClick(index)}></label>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
+      <ul className="dots">
+        {images.map((_, index) => (
+          <li key={index}>
+            <label
+              onClick={() => handleDotClick(index)}
+              className={currentIndex === index ? 'selected' : ''}
+            ></label>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</div>
 
       <div className="linhaP">
         <h1>Linha de Produtos</h1>
@@ -88,51 +89,51 @@ export default function Home() {
       <div className="produto">
         <div className="nome">
           <a href="#" class="btn-produto btn-1-produto">
-          <div className="border-container">
+            <div className="border-container">
               <svg>
                 <rect x="0" y="0" fill="none" width="90%"
                   height="90%" />
               </svg>
               <img className="ftproduto" src="https://www.aorus.com/assets/img/Motherboard.6b87c3cf.png.webp" alt="placaMae" />
               Placa Mãe
-              </div>
-            </a>
+            </div>
+          </a>
         </div>
         <div className="nome">
           <a href="#" class="btn-produto btn-1-produto">
-          <div className="border-container">
-            <svg >
+            <div className="border-container">
+              <svg >
                 <rect x="0" y="0" fill="none" width="90%"
                   height="90%" />
               </svg>
               <img className="ftproduto" src="https://www.aorus.com/assets/img/Desktop-PC.d2a8d228.png.webp" alt="Computador" />
               Computador
             </div>
-            </a>
+          </a>
         </div>
         <div className="nome">
           <a href="#" class="btn-produto btn-1-produto">
-          <div className="border-container">
+            <div className="border-container">
               <svg >
                 <rect x="0" y="0" fill="none" width="90%"
                   height="90%" />
               </svg>
               <img className="ftproduto" src="https://www.aorus.com/assets/img/Graphics.8b61a0c9.png.webp" alt="PlacaVideo" />
               Placa de Video
-              </div>
-            </a>
+            </div>
+          </a>
         </div>
         <div className="nome">
           <a href="#" class="btn-produto btn-1-produto">
-          <div className="border-container">
+            <div className="border-container">
               <svg >
                 <rect x="0" y="0" fill="none" width="90%"
                   height="90%" />
               </svg>
               <img className="ftproduto" src="https://www.aorus.com/assets/img/Monitor.2ec4422a.png.webp" alt="Monitor" />
               Monitor
-              </div>
-            </a>
+            </div>
+          </a>
         </div>
       </div>
       <br></br>
@@ -147,8 +148,8 @@ export default function Home() {
       <div className="gtx">
         <img className="rtx" src={img} alt="GTX" />
         <div className="texto-gtx">
-          <p style={{ fontSize: 60, WebkitTextStroke:1, WebkitTextStrokeColor:"black"}}>CADASTRE-SE NO NOSSO SITE</p>
-          <div style={{ display:'flex',gap:25,justifyContent:'center'}}>
+          <p style={{ fontSize: 60, WebkitTextStroke: 1, WebkitTextStrokeColor: "black" }}>CADASTRE-SE NO NOSSO SITE</p>
+          <div style={{ display: 'flex', gap: 25, justifyContent: 'center' }}>
             <a href="/autenticacao" class="btn btn-1">
               <svg>
                 <rect x="0" y="0" fill="none" width="100%"
@@ -166,8 +167,8 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <Footer/>
-      
+      <Footer />
+
     </div>
   );
 }
