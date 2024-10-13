@@ -200,6 +200,7 @@ input[type="radio"] {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    width: 97%;
 }
 
 .nome {
@@ -239,6 +240,7 @@ input[type="radio"] {
 }
 
 .btn-produto:hover .ftproduto {
+
     transform: scale(1.1); /* Aumenta a imagem em 10% */
 }
 
