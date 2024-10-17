@@ -70,6 +70,20 @@
     font-weight: 600;
 }
 
+.a-hist {
+    position: relative;
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+}
+
+
+
+
+.a-hist:hover {
+    color: #0F4AA7;
+    font-weight: 600;
+}
 
 
 

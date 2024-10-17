@@ -18,26 +18,17 @@ const Header = () => {
               {activeMenu === "produtos" && (
                 <div className="dropdown">
                   <div className="submenu-container">
-                    <a href="/produto/1">Placa Mãe</a>
-                    <a href="/produto/2">Placas de Vídeo</a>
-                    <a href="/produto/3">Computador</a>
-                    <a href="/produto/4">Monitor</a>
+                    <a href="/produto/:id">Placa Mãe</a>
+                    <a href="/produto/:id">Placas de Vídeo</a>
+                    <a href="/produto/:id">Computador</a>
+                    <a href="/produto/:id">Monitor</a>
                   </div>
                 </div>
               )}
             </li>
-            <li onClick={() => handleMenuClick("explorar")} className="menu-item">
-              Perfil
-              {activeMenu === "explorar" && (
-                <div className="dropdown">
-                  <div className="submenu-container">
-                    <a href="/">Eventos</a>
-                    <a href="/">Notícias</a>
-                  </div>
-                </div>
-              )}
-            </li>
-            <li className="menu-item">Histórico</li>
+            <li className="menu-item"><a className='a-hist' href="/perfil">Perfil</a></li>
+ 
+            <li className="menu-item" ><a className='a-hist' href="/historico-compras">Histórico</a></li>
           </ul>
         </nav>
         <div className="extra-menu">

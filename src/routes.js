@@ -21,7 +21,7 @@ export default function AppRoutes() {
         <Route path="/carrinho" element={<Carrinho />} />
         <Route path="/historico-compras" element={<HistoricoCompras />} />
         <Route path="/perfil" element={<Perfil />} />
-        <Route path="/admin/produto" element={<Produtos />} />
+        <Route path="/produto" element={<Produtos />} />
         <Route path="/admin/vendas" element={<Vendas />} />
         <Route path="/admin/vendas/:id" element={<DetalhesVenda />} />
         <Route path="/admin/usuarios" element={<Usuarios />} />

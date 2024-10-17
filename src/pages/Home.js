@@ -88,7 +88,7 @@ export default function Home() {
       <br></br>
       <div className="produto">
         <div className="nome">
-          <a href="#" class="btn-produto btn-1-produto">
+          <a href="/produto/:id" class="btn-produto btn-1-produto">
             <div className="border-container">
               <svg>
                 <rect x="0" y="0" fill="none" width="90%"
@@ -100,7 +100,7 @@ export default function Home() {
           </a>
         </div>
         <div className="nome">
-          <a href="#" class="btn-produto btn-1-produto">
+          <a href="/produto/:id" class="btn-produto btn-1-produto">
             <div className="border-container">
               <svg >
                 <rect x="0" y="0" fill="none" width="90%"
@@ -112,7 +112,7 @@ export default function Home() {
           </a>
         </div>
         <div className="nome">
-          <a href="#" class="btn-produto btn-1-produto">
+          <a href="/produto/:id" class="btn-produto btn-1-produto">
             <div className="border-container">
               <svg >
                 <rect x="0" y="0" fill="none" width="90%"
@@ -124,7 +124,7 @@ export default function Home() {
           </a>
         </div>
         <div className="nome">
-          <a href="#" class="btn-produto btn-1-produto">
+          <a href="/produto/:id" class="btn-produto btn-1-produto">
             <div className="border-container">
               <svg >
                 <rect x="0" y="0" fill="none" width="90%"
