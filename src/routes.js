@@ -10,6 +10,7 @@ import Produtos from "./pages/Produtos";
 import Vendas from "./pages/Vendas";
 import Usuarios from "./pages/Usuarios";
 import DetalhesVenda from "./pages/DetalhesVendas";
+import FinalizarCompra from "./pages/FinalizarCompra";
 
 export default function AppRoutes() {
   return (
@@ -18,6 +19,7 @@ export default function AppRoutes() {
         <Route path="/" element={<Home />} />
         <Route path="/autenticacao" element={<Autenticacao />} />
         <Route path="/produto/:id" element={<DetalhesProduto />} />
+        <Route path="/finalizar-compra" element={<FinalizarCompra/>}/>
         <Route path="/carrinho" element={<Carrinho />} />
         <Route path="/historico-compras" element={<HistoricoCompras />} />
         <Route path="/perfil" element={<Perfil />} />

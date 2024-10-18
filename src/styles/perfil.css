@@ -50,17 +50,16 @@
     height: 330px;
 }
 .container-historico {
-    padding: 100px;
     display: flex;
+    padding: 16px;
     align-items: flex-start; /* Alinha o conteúdo no topo */
-    width: 50%; /* Ajustado para que ambas caibam lado a lado */
-    height: 525px;
+    width: calc(50% - 16px); /* Ajustado para que ambas caibam lado a lado */
   }
   
   .left-historico {
     background-color: #333;
     width: 350px;
-    height: 350px;
+    height: 340px;
     display: flex;
     align-items: center;
     justify-content: center;

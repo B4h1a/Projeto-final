@@ -17,7 +17,8 @@ export default function Produtos() {
         <p className="product-title">Vendido e entregue por: TORA's | <p style={{color:"green"}}>Em estoque</p></p>
         <p className="product-shipping">Frete grátis<p style={{color:"grey", fontSize:20}}> - Consulte disponibilidade de seu CEP</p></p>
         <p className="product-price">DE: R$15.554,44</p>
-        <p className="product-price">POR: <p style={{color:"blue", fontSize:80, marginLeft:30}}>R$13.299,44</p> <a href="/comprar"><button class="button-50" role="button">Comprar</button></a></p>
+        <p className="product-price">POR: <p style={{color:"blue", fontSize:80, marginLeft:30}}>R$13.299,44</p> 
+        <a href="/finalizar-compra"><button class="button-50" role="button">Comprar</button></a></p>
         <p className="product-discount">À vista no PIX com até 10% OFF</p>
         <p className="product-payment">Em até 10x de R$1.399,90 sem juros no cartão</p>
         <p className="product-payment">Ou em 1x no cartão com até 30% OFF</p>

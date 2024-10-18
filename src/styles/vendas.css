@@ -1,0 +1,53 @@
+.left-section-vendas {
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+.container-vendas{
+    color: white;
+}
+
+.left-section-vendas img {
+    width: 250px;
+    height: 260px;
+    background-color: grey;
+}
+
+.order-info-vendas {
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.status-vendas {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.status-vendas span {
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.status-vendas .green {
+    color: green;
+}
+
+.status-vendas .red {
+    color: red;
+}
+
+.status-vendas .yellow {
+    color: yellow;
+}
+
+.details-vendas {
+    margin-top: 40px;
+}
+
+
+.clearfix-vendas::after {
+    content: "";
+    display: table;
+    clear: both;
+
+}
