@@ -28,9 +28,9 @@
     text-decoration: none;
 }
 
-.logo a:hover{
-    color:#0F4AA7;
-    
+.logo a:hover {
+    color: #0F4AA7;
+
 }
 
 
@@ -120,8 +120,11 @@
 }
 
 
-.text-ft{
-    font-size: 60px; -webkit-text-stroke: 1px; -webkit-text-stroke-color:black; }
+.text-ft {
+    font-size: 60px;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: black;
+}
 
 .dropdown a:hover {
     background-color: #555;
@@ -251,20 +254,25 @@ input[type="radio"] {
 }
 
 .ftproduto {
-    transition: transform 0.3s ease; /* Suaviza a transformação */
+    transition: transform 0.3s ease;
+    /* Suaviza a transformação */
 }
 
 .btn-produto:hover .ftproduto {
 
-    transform: scale(1.1); /* Aumenta a imagem em 10% */
+    transform: scale(1.1);
+    /* Aumenta a imagem em 10% */
 }
 
 .border-container {
     position: relative;
     align-items: center;
-    display: inline-block; /* Para ajustar o tamanho ao conteúdo */
-    width: 100%; /* Ou a largura desejada */
+    display: inline-block;
+    /* Para ajustar o tamanho ao conteúdo */
+    width: 100%;
+    /* Ou a largura desejada */
 }
+
 .btn {
     color: var(--white);
     cursor: pointer;
@@ -330,9 +338,12 @@ input[type="radio"] {
 
 .btn-1-produto {
     display: flex;
-    flex-direction: column; /* Para empilhar a imagem e o texto */
-    align-items: center; /* Centraliza o texto abaixo da imagem */
-    position: relative; /* Necessário para a borda */
+    flex-direction: column;
+    /* Para empilhar a imagem e o texto */
+    align-items: center;
+    /* Centraliza o texto abaixo da imagem */
+    position: relative;
+    /* Necessário para a borda */
 
 }
 
@@ -358,8 +369,10 @@ input[type="radio"] {
 
 .btn-1-produto {
     display: flex;
-    flex-direction: column; /* Para empilhar a imagem e o texto */
-    align-items: center; /* Centraliza o texto abaixo da imagem */
+    flex-direction: column;
+    /* Para empilhar a imagem e o texto */
+    align-items: center;
+    /* Centraliza o texto abaixo da imagem */
 
     svg {
         position: absolute;
@@ -367,7 +380,8 @@ input[type="radio"] {
         left: 35px;
         width: 400px;
         height: 15%;
-        z-index: 1; /* Para que a borda fique atrás da imagem */
+        z-index: 1;
+        /* Para que a borda fique atrás da imagem */
     }
 
     rect {
@@ -401,6 +415,7 @@ input[type="radio"] {
     }
 
 }
+
 .btn-produto:hover .ftproduto {
     transform: scale(1.1);
 }
@@ -408,83 +423,110 @@ input[type="radio"] {
 
 /* SLIDESHOW
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
-  .carousel {
+.carousel {
     position: relative;
     width: 100%;
-    overflow: hidden; /* Esconde a parte das imagens fora do contêiner */
-  }
-  
-  .featured-wrapper {
+    overflow: hidden;
+    /* Esconde a parte das imagens fora do contêiner */
+}
+
+.featured-wrapper {
     position: relative;
-  }
-  
-  .featured-list {
+}
+
+.featured-list {
     display: grid;
-  }
-  
-  .featured-list li {
-    position: relative; /* Necessário para que o temporizador fique dentro do contêiner da imagem */
+}
+
+.featured-list li {
+    position: relative;
+    /* Necessário para que o temporizador fique dentro do contêiner da imagem */
     grid-column: 1;
     grid-row: 1;
     opacity: 0;
     transition: opacity 0.5s ease;
-  }
-  
-  .featured-list li img {
-    width: 100%; /* Ajusta a largura da imagem */
-  }
-  
-  .timer {
+}
+
+.featured-list li img {
+    width: 100%;
+    /* Ajusta a largura da imagem */
+}
+
+.timer {
     position: absolute;
-    bottom: 70px; /* Posiciona no canto inferior */
-    right: 50px; /* Posiciona no canto direito */
-    width: 2px; /* Largura estreita para fazer o temporizador ficar em pé */
-    height: 35px; /* Altura inicial do temporizador */
-    background-color: #0F4AA7; /* Cor do temporizador */
-    transition: height 1s linear; /* Suaviza a transição da altura */
-    z-index: 10; /* Certifica-se de que está acima da imagem */
-  }
-  .timer2 {
+    bottom: 70px;
+    /* Posiciona no canto inferior */
+    right: 50px;
+    /* Posiciona no canto direito */
+    width: 2px;
+    /* Largura estreita para fazer o temporizador ficar em pé */
+    height: 35px;
+    /* Altura inicial do temporizador */
+    background-color: #0F4AA7;
+    /* Cor do temporizador */
+    transition: height 1s linear;
+    /* Suaviza a transição da altura */
+    z-index: 10;
+    /* Certifica-se de que está acima da imagem */
+}
+
+.timer2 {
     position: absolute;
-    bottom: 70px; /* Posiciona no canto inferior */
-    right: 50px; /* Posiciona no canto direito */
-    width: 2px; /* Largura estreita para fazer o temporizador ficar em pé */
-    height: 35px; /* Altura inicial do temporizador */
-    background-color: #ffffff; /* Cor do temporizador */
-    transition: height 1s linear; /* Suaviza a transição da altura */
-    z-index: 10; /* Certifica-se de que está acima da imagem */
-  }
-  .dots {
+    bottom: 70px;
+    /* Posiciona no canto inferior */
+    right: 50px;
+    /* Posiciona no canto direito */
+    width: 2px;
+    /* Largura estreita para fazer o temporizador ficar em pé */
+    height: 35px;
+    /* Altura inicial do temporizador */
+    background-color: #ffffff;
+    /* Cor do temporizador */
+    transition: height 1s linear;
+    /* Suaviza a transição da altura */
+    z-index: 10;
+    /* Certifica-se de que está acima da imagem */
+}
+
+.dots {
     display: flex;
     justify-content: center;
     position: absolute;
     bottom: 10px;
     left: 90%;
     transform: translateX(-50%);
-  }
-  
-  .dots li {
-    margin-right: 8px; /* espaço entre os traços */
-  }
-  
-  .dots label {
+}
+
+.dots li {
+    margin-right: 8px;
+    /* espaço entre os traços */
+}
+
+.dots label {
     display: inline-block;
     width: 20px;
     height: 8px;
-    background-color: white; /* Cor padrão */
-    cursor: pointer; /* Mostra que é clicável */
-    transform: skew(-20deg); /* Inclinação para criar o efeito de paralelepípedo */
-    transition: all 0.3s; /* Suavização para animação */
-  }
-  
-  .dots label:hover {
-    background: #0F4AA7; /* Cor ao passar o mouse */
-  }
+    background-color: white;
+    /* Cor padrão */
+    cursor: pointer;
+    /* Mostra que é clicável */
+    transform: skew(-20deg);
+    /* Inclinação para criar o efeito de paralelepípedo */
+    transition: all 0.3s;
+    /* Suavização para animação */
+}
 
-  .dots label.selected {
-    background-color: #0F4AA7; /* Cor ao ser selecionado */
-    width: 120px; /* Largura maior quando selecionado */
-  }
+.dots label:hover {
+    background: #0F4AA7;
+    /* Cor ao passar o mouse */
+}
+
+.dots label.selected {
+    background-color: #0F4AA7;
+    /* Cor ao ser selecionado */
+    width: 120px;
+    /* Largura maior quando selecionado */
+}
 
 .thumb-list {
     display: grid;
@@ -657,10 +699,33 @@ a {
 
 /* Ajustes para telas menores (abaixo de 720px) */
 @media (max-width: 720px) {
+    .header {
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        display: flex;
+        align-items: start;
+        background-color: #111;
+        padding: 10px 20px;
+
+    }
+
+    .menu {
+        gap: 10px;
+        display: flex;
+        list-style: none;
+        gap: 20px;
+        margin: 0;
+        padding: 0;
+        width: 400px;
+    }
+
+
 
 
     .produto {
-        flex-direction: column; /* Troca para coluna em telas menores */
+        flex-direction: column;
+        /* Troca para coluna em telas menores */
         align-items: center;
     }
 
@@ -672,60 +737,84 @@ a {
 
 
     .rtx {
-        height: 250px; /* Ajusta a altura da imagem em telas menores */
+        height: 250px;
+        /* Ajusta a altura da imagem em telas menores */
     }
 }
 
-  
-  /* Ajuste para tablets */
-  @media  (max-width: 720px)  {
+
+/* Ajuste para tablets */
+@media (max-width: 720px) {
     .carousel-item {
-      width: 250px;
-      height: 150px;
+        width: 250px;
+        height: 150px;
     }
 
 
-      
-      .dots label {
+
+    .dots label {
         display: inline-block;
         width: 10px;
         height: 3px;
-        background-color: white; /* Cor padrão */
-        cursor: pointer; /* Mostra que é clicável */
-        transform: skew(-20deg); /* Inclinação para criar o efeito de paralelepípedo */
-        transition: all 0.3s; /* Suavização para animação */
-      }
-      
-      .dots li {
-        margin-right: 3px; /* espaço entre os traços */
-      }
-    
-      .dots label.selected {
-        background-color: #0F4AA7; /* Cor ao ser selecionado */
-        width: 30px; /* Largura maior quando selecionado */
-      }
+        background-color: white;
+        /* Cor padrão */
+        cursor: pointer;
+        /* Mostra que é clicável */
+        transform: skew(-20deg);
+        /* Inclinação para criar o efeito de paralelepípedo */
+        transition: all 0.3s;
+        /* Suavização para animação */
+    }
 
-      .timer {
+    .dots li {
+        margin-right: 3px;
+        /* espaço entre os traços */
+    }
+
+    .dots label.selected {
+        background-color: #0F4AA7;
+        /* Cor ao ser selecionado */
+        width: 30px;
+        /* Largura maior quando selecionado */
+    }
+
+    .timer {
         position: absolute;
-        bottom: 25px; /* Posiciona no canto inferior */
-        right: 25px; /* Posiciona no canto direito */
-        width: 2px; /* Largura estreita para fazer o temporizador ficar em pé */
-        height: 20px; /* Altura inicial do temporizador */
-        background-color: #0F4AA7; /* Cor do temporizador */
-        transition: height 1s linear; /* Suaviza a transição da altura */
-        z-index: 10; /* Certifica-se de que está acima da imagem */
-      }
-      .timer2 {
+        bottom: 25px;
+        /* Posiciona no canto inferior */
+        right: 25px;
+        /* Posiciona no canto direito */
+        width: 2px;
+        /* Largura estreita para fazer o temporizador ficar em pé */
+        height: 20px;
+        /* Altura inicial do temporizador */
+        background-color: #0F4AA7;
+        /* Cor do temporizador */
+        transition: height 1s linear;
+        /* Suaviza a transição da altura */
+        z-index: 10;
+        /* Certifica-se de que está acima da imagem */
+    }
+
+    .timer2 {
         position: absolute;
-        bottom: 25px; /* Posiciona no canto inferior */
-        right: 25px; /* Posiciona no canto direito */
-        width: 2px; /* Largura estreita para fazer o temporizador ficar em pé */
-        height: 20px; /* Altura inicial do temporizador */
-        background-color: #ffffff; /* Cor do temporizador */
-        transition: height 1s linear; /* Suaviza a transição da altura */
-        z-index: 10; /* Certifica-se de que está acima da imagem */
-      }
-      .container-footer {
+        bottom: 25px;
+        /* Posiciona no canto inferior */
+        right: 25px;
+        /* Posiciona no canto direito */
+        width: 2px;
+        /* Largura estreita para fazer o temporizador ficar em pé */
+        height: 20px;
+        /* Altura inicial do temporizador */
+        background-color: #ffffff;
+        /* Cor do temporizador */
+        transition: height 1s linear;
+        /* Suaviza a transição da altura */
+        z-index: 10;
+        /* Certifica-se de que está acima da imagem */
+    }
+
+    .container-footer {
         display: flex;
         justify-content: center;
         /* Garante distribuição uniforme */
@@ -735,7 +824,7 @@ a {
         gap: 30px;
         /* Permite as colunas se ajustarem em telas menores */
     }
-    
+
     .column-footer {
         flex-grow: 1;
         /* Garante que todas as colunas cresçam uniformemente */
@@ -746,21 +835,130 @@ a {
         padding: 0 10px;
         /* Adiciona um pouco de padding para espaçamento */
     }
-    .text-ft{
-        font-size: 30px; }
-        .btn {
-            color: var(--white);
-            cursor: pointer;
-            font-size: 10px;
-            font-weight: 400;
-            line-height: 45px;
-            max-width: 160px;
-            position: relative;
-            text-transform: uppercase;
-            width: 100%;
-            text-align: center;
-            text-decoration: none;
-        }
-        
-  }
-  
+
+    .text-ft {
+        font-size: 30px;
+    }
+
+    .btn {
+        color: var(--white);
+        cursor: pointer;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 45px;
+        max-width: 160px;
+        position: relative;
+        text-transform: uppercase;
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+    }
+
+}
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111;
+    padding: 10px 20px;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* Ícone do menu mobile (hambúrguer) */
+.mobile-menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Menu desktop */
+.navbar {
+    display: flex;
+}
+
+/* Ajustes do Menu */
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+/* Menu item */
+.menu-item {
+    position: relative;
+    padding: 10px 15px;
+    color: white;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    color: #0F4AA7;
+    font-weight: 600;
+}
+
+/* Dropdown */
+.dropdown {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 20px 0;
+    z-index: 999;
+}
+
+.submenu-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Extra Menu */
+.extra-menu {
+    display: flex;
+    gap: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 720px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: #111;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+    }
+    .menu-item{
+        text-align: center;
+    }
+    .navbar.open {
+        display: flex;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .extra-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header {
+        flex-direction: row;
+        align-items: flex-end;
+    }
+}
