@@ -120,7 +120,8 @@
 }
 
 
-
+.text-ft{
+    font-size: 60px; -webkit-text-stroke: 1px; -webkit-text-stroke-color:black; }
 
 .dropdown a:hover {
     background-color: #555;
@@ -653,3 +654,113 @@ a {
     margin-top: 50px;
     font-size: 14px;
 }
+
+/* Ajustes para telas menores (abaixo de 720px) */
+@media (max-width: 720px) {
+
+
+    .produto {
+        flex-direction: column; /* Troca para coluna em telas menores */
+        align-items: center;
+    }
+
+    .extra-menu {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+
+    .rtx {
+        height: 250px; /* Ajusta a altura da imagem em telas menores */
+    }
+}
+
+  
+  /* Ajuste para tablets */
+  @media  (max-width: 720px)  {
+    .carousel-item {
+      width: 250px;
+      height: 150px;
+    }
+
+
+      
+      .dots label {
+        display: inline-block;
+        width: 10px;
+        height: 3px;
+        background-color: white; /* Cor padrão */
+        cursor: pointer; /* Mostra que é clicável */
+        transform: skew(-20deg); /* Inclinação para criar o efeito de paralelepípedo */
+        transition: all 0.3s; /* Suavização para animação */
+      }
+      
+      .dots li {
+        margin-right: 3px; /* espaço entre os traços */
+      }
+    
+      .dots label.selected {
+        background-color: #0F4AA7; /* Cor ao ser selecionado */
+        width: 30px; /* Largura maior quando selecionado */
+      }
+
+      .timer {
+        position: absolute;
+        bottom: 25px; /* Posiciona no canto inferior */
+        right: 25px; /* Posiciona no canto direito */
+        width: 2px; /* Largura estreita para fazer o temporizador ficar em pé */
+        height: 20px; /* Altura inicial do temporizador */
+        background-color: #0F4AA7; /* Cor do temporizador */
+        transition: height 1s linear; /* Suaviza a transição da altura */
+        z-index: 10; /* Certifica-se de que está acima da imagem */
+      }
+      .timer2 {
+        position: absolute;
+        bottom: 25px; /* Posiciona no canto inferior */
+        right: 25px; /* Posiciona no canto direito */
+        width: 2px; /* Largura estreita para fazer o temporizador ficar em pé */
+        height: 20px; /* Altura inicial do temporizador */
+        background-color: #ffffff; /* Cor do temporizador */
+        transition: height 1s linear; /* Suaviza a transição da altura */
+        z-index: 10; /* Certifica-se de que está acima da imagem */
+      }
+      .container-footer {
+        display: flex;
+        justify-content: center;
+        /* Garante distribuição uniforme */
+        max-width: 1200px;
+        margin: auto;
+        flex-wrap: wrap;
+        gap: 30px;
+        /* Permite as colunas se ajustarem em telas menores */
+    }
+    
+    .column-footer {
+        flex-grow: 1;
+        /* Garante que todas as colunas cresçam uniformemente */
+        max-width: 25%;
+        /* Limita a largura máxima de cada coluna */
+        text-align: left;
+        /* Mantém o texto alinhado à esquerda */
+        padding: 0 10px;
+        /* Adiciona um pouco de padding para espaçamento */
+    }
+    .text-ft{
+        font-size: 30px; }
+        .btn {
+            color: var(--white);
+            cursor: pointer;
+            font-size: 10px;
+            font-weight: 400;
+            line-height: 45px;
+            max-width: 160px;
+            position: relative;
+            text-transform: uppercase;
+            width: 100%;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+  }
+  

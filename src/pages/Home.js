@@ -148,7 +148,7 @@ export default function Home() {
       <div className="gtx">
         <img className="rtx" src={img} alt="GTX" />
         <div className="texto-gtx">
-          <p style={{ fontSize: 60, WebkitTextStroke: 1, WebkitTextStrokeColor: "black" }}>CADASTRE-SE NO NOSSO SITE</p>
+          <p className="text-ft">CADASTRE-SE NO NOSSO SITE</p>
           <div style={{ display: 'flex', gap: 25, justifyContent: 'center' }}>
             <a href="/autenticacao" class="btn btn-1">
               <svg>

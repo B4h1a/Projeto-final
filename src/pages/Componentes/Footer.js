@@ -15,10 +15,7 @@ export default function Footer(){
               <li><a href="#">Placas-Mãe</a></li>
               <li><a href="#">Placas De Vídeo</a></li>
               <li><a href="#">Monitores</a></li>
-              <li><a href="#">Notebooks</a></li>
               <li><a href="#">Computador</a></li>
-              <li><a href="#">Periféricos para PC</a></li>
-              <li><a href="#">Componentes para PC</a></li>
             </ul>
           </div>
           <div className="column-footer">
@@ -26,8 +23,6 @@ export default function Footer(){
             <ul>
               <li><a href="#">Notícias</a></li>
               <li><a href="#">Eventos</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Wallpaper</a></li>
             </ul>
           </div>
           <div className="column-footer">
