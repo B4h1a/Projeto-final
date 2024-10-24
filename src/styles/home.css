@@ -901,23 +901,6 @@ a {
     font-weight: 600;
 }
 
-/* Dropdown */
-.dropdown {
-    position: absolute;
-    top: 50px;
-    left: 0;
-    width: 100%;
-    background-color: #333;
-    padding: 20px 0;
-    z-index: 999;
-}
-
-.submenu-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
 /* Extra Menu */
 .extra-menu {
     display: flex;
@@ -936,6 +919,36 @@ a {
         top: 60px;
         left: 0;
     }
+    .header {
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #111;
+        padding: 10px 20px;
+        color: white;
+        font-family: Arial, sans-serif;
+    }
+    
+    .dropdown {
+        font-size: 10px;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        padding: 20px 0;
+        z-index: 999;
+    }
+    
+.submenu-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
     .menu-item{
         text-align: center;
     }
