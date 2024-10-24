@@ -608,3 +608,17 @@ input:-webkit-autofill
     color: #0F4AA7;
     border-color: #0F4AA7;
 }
+
+
+
+@media screen and (max-width: 740px) {
+    .form {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .form {
+        width: 100%;
+    }
+}

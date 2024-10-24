@@ -36,7 +36,6 @@ export default function HistoryCard( ){
             </div>
 
             <div className="actions-usuarios">
-              <a href="/"><button class="button-55" role="button">Promover</button></a>
               <a href="/"><button class="button-55" role="button">Editar</button></a>
               <a href="/"><button class="button-55" role="button">Excluir</button></a>
             </div>
