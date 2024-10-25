@@ -851,6 +851,22 @@ a {
     .text-ft {
         font-size: 30px;
     }
+    .btn-1-produto {
+        display: flex;
+        flex-direction: column;
+        /* Para empilhar a imagem e o texto */
+        align-items: center;
+        /* Centraliza o texto abaixo da imagem */
+    
+        svg {
+            position: absolute;
+            top: 86%;
+            left: 60px;
+            width: 330px;
+            height: 15%;
+            z-index: 1;
+            /* Para que a borda fique atrás da imagem */
+        }}
 
     .btn {
         color: var(--white);
