@@ -75,8 +75,8 @@ export default function Home() {
 
       <div className="linhaP">
         <h1>Linha de Produtos</h1>
-        <p>
-          A TORAS é uma empresa líder em placas-mãe de alto desempenho, placas gráficas,<br></br>
+        <p className='text-home'>
+          A BITZONE é uma empresa líder em placas-mãe de alto desempenho, placas gráficas,<br></br>
           laptops, hardware para jogos e sistemas. Somos apaixonados por nos juntarmos aos<br></br>
           jogadores para desafiar os limites sem medo e lutar enquanto subimos para a glória final!
         </p>

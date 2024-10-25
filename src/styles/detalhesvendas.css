@@ -36,8 +36,7 @@
   }
 
   
-  .product-details-detalhe,
-  .technical-sheet-detalhe {
+  .product-details-detalhe {
     background-color: black;
     color: white;
     border-radius: 8px;

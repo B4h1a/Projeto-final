@@ -20,7 +20,7 @@ export default function DetalhesVenda() {
             <span>Adicionar Imagem</span>
           </div>
           <div className="image-options-detalhe">
-            <p style={{color:"white", fontSize:25}}>Vendido e entregue por: TORA'S</p>
+            <p style={{color:"white", fontSize:25}}>Vendido e entregue por: BITZONE</p>
             <input style={{height:30, width:200}} type="text"placeholder="R$:00,00" />
             <br/>
             <br/>
@@ -36,11 +36,6 @@ export default function DetalhesVenda() {
           <textarea placeholder="Descrição do Produto"></textarea>
         </div>
 
-        {/* Ficha Técnica */}
-        <div className="technical-sheet-detalhe">
-          <h2>Ficha Técnica</h2>
-          <textarea placeholder="Ficha Técnica do Produto"></textarea>
-        </div>
       </div>
       </main>
       <Footer />

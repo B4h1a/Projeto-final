@@ -13,7 +13,7 @@ export default function FinalizarCompra() {
             <nav>
               <h1 style={{ color: "white", fontWeight: "bold", fontSize: 30 }}>PRODUTO E SERVIÇO</h1>
               <div class="product-info-finalizar">
-                <p style={{ display: 'flex', flexDirection: 'row', color: "white", fontSize: 20 }}>Vendido e entregue por:TORA'S</p>
+                <p style={{ display: 'flex', flexDirection: 'row', color: "white", fontSize: 20 }}>Vendido e entregue por:BITZONE</p>
                 <p style={{ color: "white", fontSize: 20 }}>Produto que foi vendido: Breve descrição sobre ele ID - OP561FISOPUSISI</p>
               </div>
             </nav>

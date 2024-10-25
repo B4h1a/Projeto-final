@@ -10,7 +10,7 @@ export default function Footer(){
         <hr />
         <div className="container-footer">
           <div className="column-footer">
-            <h3>PRODUTOS</h3>
+            <h3>CATEGORIAS</h3>
             <ul>
               <li><a href="#">Placas-Mãe</a></li>
               <li><a href="#">Placas De Vídeo</a></li>
@@ -19,7 +19,7 @@ export default function Footer(){
             </ul>
           </div>
           <div className="column-footer">
-            <h3>EXPLORAR</h3>
+            <h3>PRODUTO MAIS VENDIDOS</h3>
             <ul>
               <li><a href="#">Notícias</a></li>
               <li><a href="#">Eventos</a></li>
@@ -34,7 +34,7 @@ export default function Footer(){
           </div>
         </div>
         <div className="copyright">
-          <p>©2024 TORAS Technology Co., Ltd. All Rights Reserved. <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a></p>
+          <p>©2024 BITZONE Technology Co., Ltd. All Rights Reserved. <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a></p>
         </div>
       </footer>
     )

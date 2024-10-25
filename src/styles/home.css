@@ -305,6 +305,7 @@
 
         rect {
             fill: none;
+            
             stroke: var(--white);
             stroke-width: 2;
             stroke-dasharray: 422, 0;
@@ -387,6 +388,7 @@
         rect {
             fill: none;
             stroke: var(--white);
+            width: 100%;
             stroke-width: 2;
             stroke-dasharray: 422, 0;
             transition: all 0.35s linear;
@@ -974,8 +976,8 @@
             svg {
 
                 top: 87%;
-                left: 16%;
-                width: 315px;
+                left: 13%;
+                width: 285px;
                 height: 15%;
                 z-index: 1;
                 /* Para que a borda fique atrás da imagem */
@@ -1011,7 +1013,9 @@
 
 
 
-
+        .text-home{
+            font-size: large;
+        }
         .produto {
             flex-direction: column;
             /* Troca para coluna em telas menores */

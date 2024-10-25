@@ -16,7 +16,7 @@ export default function Produtos() {
           </div>
           <div className="product-details">
             <p className="product-title">
-              Vendido e entregue por: TORA's |
+              Vendido e entregue por: BITZONE |
               <span className="in-stock">Em estoque</span>
             </p>
             <p className="product-shipping">
@@ -38,8 +38,6 @@ export default function Produtos() {
 
         <div className="product-description">
           <h2>Detalhe do Produto</h2>
-          <p>aaaaaaaaaaaaaaaaaaaaaaaaa</p>
-          <h2>Ficha Técnica</h2>
           <p>aaaaaaaaaaaaaaaaaaaaaaaaa</p>
         </div>
       </main>
