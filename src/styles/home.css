@@ -957,8 +957,8 @@
             svg {
                 position: absolute;
                 top: 86%;
-                left: 60px;
-                width: 330px;
+
+                width: 315px;
                 height: 15%;
                 z-index: 1;
                 /* Para que a borda fique atrás da imagem */
