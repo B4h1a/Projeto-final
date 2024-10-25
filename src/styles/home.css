@@ -703,7 +703,7 @@
     /* Ajuste para tablets */
 
 
-    @media (max-width: 380px) {
+    @media (max-width: 390px) {
         .header {
             position: fixed;
             width: 200px;
@@ -714,6 +714,23 @@
 
 
         }
+        
+        .btn-1-produto {
+            display: flex;
+            flex-direction: column;
+            /* Para empilhar a imagem e o texto */
+            align-items: center;
+            /* Centraliza o texto abaixo da imagem */
+        
+            svg {
+
+                top: 87%;
+                left: 16%;
+                width: 315px;
+                height: 15%;
+                z-index: 1;
+                /* Para que a borda fique atrás da imagem */
+            }}
 
     }
 
@@ -848,7 +865,7 @@
 
 
         .ftproduto {
-            width: 310px;
+            width: 320px;
             transition: transform 0.3s ease;
             /* Suaviza a transformação */
         }
@@ -955,9 +972,9 @@
             /* Centraliza o texto abaixo da imagem */
         
             svg {
-                position: absolute;
-                top: 86%;
 
+                top: 87%;
+                left: 16%;
                 width: 315px;
                 height: 15%;
                 z-index: 1;
