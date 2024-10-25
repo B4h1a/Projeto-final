@@ -139,22 +139,46 @@ a {
 
 @media (max-width: 440px) {
     .footer-slogan {
-        font-size: 15px;
+        font-size: 12px;
     }
 
     .glitch {
 
-        font-size: 10px;
+        font-size: 9px;
 
     }
 
     h3 {
-        font-size: 15px;
+        font-size: 12px;
     }
     li{
-        font-size: 10px;
+        font-size: 9px;
     }
     .copyright{
-        font-size: 10px;
+        font-size: 9px;
+    }
+}
+@media (max-width: 390px) {
+    .footer-slogan {
+        font-size: 12px;
+    }
+    .container-footer{
+        flex-wrap: wrap;
+    }
+
+    .glitch {
+
+        font-size: 9px;
+
+    }
+
+    h3 {
+        font-size: 12px;
+    }
+    li{
+        font-size: 9px;
+    }
+    .copyright{
+        font-size: 9px;
     }
 }

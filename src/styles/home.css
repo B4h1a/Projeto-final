@@ -217,7 +217,7 @@
     .produto {
         display: flex;
         flex-direction: row;
-        gap: 35px;
+        gap: 13px;
         justify-content: center;
         width: 97%;
     }
