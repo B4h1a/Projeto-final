@@ -751,6 +751,18 @@ a {
     }
 
 
+    .ftproduto {
+        width: 310px;
+        transition: transform 0.3s ease;
+        /* Suaviza a transformação */
+    }
+    
+    .btn-produto:hover .ftproduto {
+    
+        transform: scale(1.1);
+        /* Aumenta a imagem em 10% */
+    }
+    
 
     .dots label {
         display: inline-block;
