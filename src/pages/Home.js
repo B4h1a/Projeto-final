@@ -95,7 +95,7 @@ export default function Home() {
                   height="90%" />
               </svg>
               <img className="ftproduto" src="https://www.aorus.com/assets/img/Motherboard.6b87c3cf.png.webp" alt="placaMae" />
-              Placa Mãe
+              <p style={{textAlign:"center"}}>Placa Mãe</p>
             </div>
           </a>
         </div>
@@ -107,7 +107,8 @@ export default function Home() {
                   height="90%" />
               </svg>
               <img className="ftproduto" src="https://www.aorus.com/assets/img/Desktop-PC.d2a8d228.png.webp" alt="Computador" />
-              Computador
+              
+              <p style={{textAlign:"center"}}>Computador</p>
             </div>
           </a>
         </div>
@@ -119,7 +120,7 @@ export default function Home() {
                   height="90%" />
               </svg>
               <img className="ftproduto" src="https://www.aorus.com/assets/img/Graphics.8b61a0c9.png.webp" alt="PlacaVideo" />
-              Placa de Video
+              <p style={{textAlign:"center"}}>Placa de Video</p>
             </div>
           </a>
         </div>
@@ -131,7 +132,7 @@ export default function Home() {
                   height="90%" />
               </svg>
               <img className="ftproduto" src="https://www.aorus.com/assets/img/Monitor.2ec4422a.png.webp" alt="Monitor" />
-              Monitor
+              <p style={{textAlign:"center"}}>Monitor</p>
             </div>
           </a>
         </div>

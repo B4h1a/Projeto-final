@@ -717,22 +717,21 @@
 
         }
         
-        .btn-1-produto {
-            display: flex;
-            flex-direction: column;
-            /* Para empilhar a imagem e o texto */
-            align-items: center;
-            /* Centraliza o texto abaixo da imagem */
-        
-            svg {
 
+            .btn-1-produto {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            .btn-1-produto svg {
                 top: 87%;
-                left: 16%;
-                width: 315px;
+                left: 13%;
+                width: 285px;
                 height: 15%;
                 z-index: 1;
-                /* Para que a borda fique atrás da imagem */
-            }}
+            }
+
 
     }
 
@@ -976,8 +975,8 @@
             svg {
 
                 top: 87%;
-                left: 13%;
-                width: 285px;
+                left: 4%;
+                width: 290px;
                 height: 15%;
                 z-index: 1;
                 /* Para que a borda fique atrás da imagem */
