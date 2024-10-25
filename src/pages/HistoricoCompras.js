@@ -8,19 +8,14 @@ export default function HistoricoCompras() {
   return (
     <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", minHeight: "100vh" }}>
       <Header />
-      <main style={{ flex: 1, marginTop: 68, backgroundColor: "black" }}>
+      <main style={{ flex: 1, marginTop: 60, backgroundColor: "black" }}>
         <h1 className="historico">Historico de Compras</h1>
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <CartaoHistorico />
-          <CartaoHistorico />
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <CartaoHistorico />
-          <CartaoHistorico />
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <CartaoHistorico />
-          <CartaoHistorico />
+        <div className="historico-ne">
+         <CartaoHistorico/>
+         <CartaoHistorico/>
+         <CartaoHistorico/>
+         <CartaoHistorico/>
+         <CartaoHistorico/>
         </div>
 
       </main>

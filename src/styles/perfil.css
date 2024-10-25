@@ -1,5 +1,6 @@
 .container-profile {
     display: flex;
+    margin-top: 20px;
     flex-direction: column;
     align-items: center;
 }
@@ -43,6 +44,16 @@
 .historico{
     padding: 60px;
     color: white;
+}
+.historico-ne{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.fica-historico{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .cartao-profile{
     background-color: #232323;
@@ -177,3 +188,10 @@
     line-height: 50px;
   }
 }   
+@media (max-width:720px){
+  .fica-historico, .historico-ne{
+    display: flex;
+    flex-direction: column;
+  }
+
+}

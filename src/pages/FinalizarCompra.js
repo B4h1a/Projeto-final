@@ -7,7 +7,7 @@ export default function FinalizarCompra() {
   return (
     <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", minHeight: "100vh" }}>
       <Header />
-      <main style={{ flex: 1, marginTop: 68, backgroundColor: "black" }}>
+      <main style={{ flex: 1, marginTop: 60, backgroundColor: "black" }}>
         <div class="container-finalizar">
           <section style={{ marginBottom: 20, padding: 10, backgroundColor: "#222", display: "flex", flexDirection: 'row', justifyContent: "space-between" }} class="product-service-finalizar">
             <nav>

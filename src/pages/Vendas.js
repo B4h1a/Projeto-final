@@ -8,7 +8,7 @@ export default function Vendas() {
   return (
     <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", minHeight: "100vh" }}>
       <Header />
-      <main style={{ flex: 1, marginTop: 68,backgroundColor:'black' }}>
+      <main style={{ flex: 1, marginTop: 60,backgroundColor:'black' }}>
       <h1 style={{textAlign:'center',color:'white'}}>Vendas Realizadas</h1>
         <CartaoVendas/>
         <br/>

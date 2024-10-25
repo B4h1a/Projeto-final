@@ -8,7 +8,7 @@ export default function DetalhesProduto() {
   return (
     <div style={{display:"flex", flexDirection:"column", justifyContent:"space-between",minHeight:"100vh"}}>
       <Header/>
-      <main style={{flex:1, marginTop:68, backgroundColor:"black"}}>
+      <main style={{flex:1, marginTop:60, backgroundColor:"black"}}>
         <div className="linhaCartao">
           <Cartao/>
           <Cartao/>

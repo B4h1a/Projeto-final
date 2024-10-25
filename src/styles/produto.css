@@ -10,6 +10,7 @@
 }
 .linhaCartao{
     display: flex;
+    margin-top: 20px;
     justify-content: center;
     flex-direction: row;
     gap: 30px;
@@ -225,5 +226,30 @@
     line-height: 50px;
   }
 }   
+@media (max-width: 720px) {
+  .linhaCartao{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 20px;
+    align-items: center;
+  }
+
+
+    .cartao{
+      background-color: #232323;
+      width: 330px;
+      height: 535px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+
+}
+
+
 
 

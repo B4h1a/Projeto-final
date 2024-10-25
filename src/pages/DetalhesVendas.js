@@ -8,7 +8,7 @@ export default function DetalhesVenda() {
   return (
     <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", minHeight: "100vh" }}>
       <Header />
-      <main style={{ flex: 1, marginTop: 68, backgroundColor: 'black' }}>
+      <main style={{ flex: 1, marginTop: 60, backgroundColor: 'black' }}>
       <div className="product-form-detalhe">
         <div className="product-name-detalhe">
           <input type="text" id="nome" placeholder="Nome do Produto" />
