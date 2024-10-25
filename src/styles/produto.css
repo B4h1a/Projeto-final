@@ -226,7 +226,7 @@
     line-height: 50px;
   }
 }   
-@media (max-width: 720px) {
+@media (max-width: 800px) {
   .linhaCartao{
     display: flex;
     justify-content: center;

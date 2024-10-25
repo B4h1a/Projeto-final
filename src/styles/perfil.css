@@ -188,7 +188,7 @@
     line-height: 50px;
   }
 }   
-@media (max-width:720px){
+@media (max-width:800px){
   .fica-historico, .historico-ne{
     display: flex;
     flex-direction: column;

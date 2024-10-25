@@ -698,7 +698,7 @@ a {
 }
 
 /* Ajustes para telas menores (abaixo de 720px) */
-@media (max-width: 720px) {
+@media (max-width: 800px) {
     .header {
         position: fixed;
         width: 100%;
@@ -744,7 +744,7 @@ a {
 
 
 /* Ajuste para tablets */
-@media (max-width: 720px) {
+@media (max-width: 800px) {
     .carousel-item {
         width: 250px;
         height: 150px;
@@ -935,7 +935,7 @@ a {
     gap: 20px;
 }
 /* Responsividade */
-@media (max-width: 720px) {
+@media (max-width: 800px) {
     .navbar {
         display: none;
         flex-direction: column;
