@@ -217,6 +217,7 @@
     .produto {
         display: flex;
         flex-direction: row;
+        gap: 50px;
         justify-content: center;
         width: 97%;
     }
@@ -378,7 +379,7 @@
         svg {
             position: absolute;
             top: 89%;
-            left: 35px;
+
             width: 400px;
             height: 15%;
             z-index: 1;

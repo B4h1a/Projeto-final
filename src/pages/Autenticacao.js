@@ -98,7 +98,7 @@ export default function Autenticacao() {
           <button onClick={handleSignUp} className="btn-login btn-primary">cadastrar</button>
         </div>
         <div className="second-column">
-          <h2 className="title title-second">Faça login no desenvolvedor</h2>
+          <h2 className="title title-second">Faça login</h2>
           <br/>
           <br/>
           <br/>
