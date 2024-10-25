@@ -906,7 +906,6 @@ a {
     display: flex;
     gap: 20px;
 }
-
 /* Responsividade */
 @media (max-width: 720px) {
     .navbar {
@@ -914,46 +913,54 @@ a {
         flex-direction: column;
         align-items: center;
         background-color: #111;
-        width: 100%;
+        width: 100%; /* Garante que não ultrapasse a largura da tela */
         position: absolute;
         top: 60px;
         left: 0;
+        overflow: hidden; /* Evita que conteúdo extra transborde */
     }
+
     .header {
         position: fixed;
-        width: 100%;
+        width: 100vw; /* Garante que ocupe exatamente a largura da tela */
+        max-width: 100%; /* Evita que o header ultrapasse */
         z-index: 1000;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: center;
         background-color: #111;
-        padding: 10px 20px;
-        color: white;
+        padding: 10px; /* Reduz padding lateral */
+        box-sizing: border-box; /* Inclui padding na largura total */
         gap: 10px;
+        color: white;
         font-family: Arial, sans-serif;
     }
-    
+
     .dropdown {
         font-size: 10px;
         position: absolute;
         top: 50px;
         left: 0;
         width: 100%;
+        max-width: 100%; /* Evita que o dropdown ultrapasse a tela */
         background-color: #333;
-        padding: 20px 0;
+        padding: 10px 0;
         z-index: 999;
     }
-    
-.submenu-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
 
-    .menu-item{
-        padding: 5px 10px; /* Menos padding nos itens */
-        text-align: center;
+    .submenu-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* Aproxima um pouco mais os itens */
+        flex-wrap: wrap; /* Permite que os itens quebrem para a linha de baixo */
     }
+
+    .menu-item {
+        padding: 5px 10px;
+        text-align: center;
+        word-wrap: break-word; /* Garante que o texto não ultrapasse a largura */
+    }
+
     .navbar.open {
         display: flex;
     }
@@ -975,15 +982,5 @@ a {
     .header {
         flex-direction: row;
         align-items: flex-end;
-    }
-}
-@media (max-width: 430px) {
-    .header{
-        width: 96%;
-    }
-}
-@media (max-width: 420px) {
-    .header{
-        width: 96.5%;
     }
 }
