@@ -999,6 +999,9 @@
             padding: 10px 20px;
 
         }
+        .border-container{
+            margin-bottom: 50px;
+        }
 
         .menu {
             gap: 10px;
