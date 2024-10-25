@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../styles/home.css';
+import '../../styles/footer.css';
 
 export default function Footer(){
     return(
