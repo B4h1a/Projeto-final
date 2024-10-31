@@ -1,12 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthContext';
 import '../../styles/home.css';
 
 const Header = () => {
+    const { user, logout } = useContext(AuthContext); // Pega o usuário logado e a função logout
     const [activeMenu, setActiveMenu] = useState(null);
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false); // Controle do menu mobile
+    const navigate = useNavigate();
 
     const handleMenuClick = (menu) => {
         setActiveMenu(activeMenu === menu ? null : menu);
+    };
+
+    const handleLogout = () => {
+        logout(); // Desloga o usuário
+        navigate("/autenticacao"); // Redireciona para a página de autenticação
     };
 
     return (
@@ -23,30 +32,56 @@ const Header = () => {
 
             <nav className={`navbar ${isMobileMenuOpen ? 'open' : ''}`}>
                 <ul className="menu">
-                    <li onClick={() => handleMenuClick("produtos")} className="menu-item">
+                    {/* Link para Produtos com submenu */}
+                    <li className="menu-item" onClick={() => handleMenuClick("produtos")}>
                         Produtos
                         {activeMenu === "produtos" && (
                             <div className="dropdown">
                                 <div className="submenu-container">
-                                    <a href="/produto/:id">Placa Mãe</a>
-                                    <a href="/produto/:id">Placas de Vídeo</a>
-                                    <a href="/produto/:id">Computador</a>
-                                    <a href="/produto/:id">Monitor</a>
+                                    <Link to="/produto/:id">Placa Mãe</Link>
+                                    <Link to="/produto/:id">Placas de Vídeo</Link>
+                                    <Link to="/produto/:id">Computador</Link>
+                                    <Link to="/produto/:id">Monitor</Link>
                                 </div>
                             </div>
                         )}
                     </li>
-                    <li className="menu-item">
-                        <a className='a-hist' href="/perfil">Perfil</a>
-                    </li>
-                    <li className="menu-item">
-                        <a className='a-hist' href="/historico-compras">Histórico</a>
-                    </li>
+
+                    {/* Exibir "Carrinho", "Perfil" e "Histórico" apenas para usuários logados */}
+                    {user && (
+                        <>
+                            <li className="menu-item">
+                                <Link to="/perfil">Meu Perfil</Link>
+                            </li>
+                            <li className="menu-item">
+                                <Link to="/historico-compras">Histórico</Link>
+                            </li>
+                        </>
+                    )}
+
+                    {/* Links visíveis apenas para Admin */}
+                    {user && user.role === "ADMIN" && (
+                        <>
+                            <li className="menu-item">
+                                <Link to="/admin/vendas">Vendas</Link>
+                            </li>
+                            <li className="menu-item">
+                                <Link to="/admin/usuarios">Gerenciar Usuários</Link>
+                            </li>
+                            <li className="menu-item">
+                                <Link to="/admin/produto">Adicionar Produto</Link>
+                            </li>
+                        </>
+                    )}
                 </ul>
             </nav>
 
             <div className="extra-menu">
-                <a href="/autenticacao" className="my-aorus">Logar</a>
+                {user ? (
+                    <a href="/" className="my-aorus" onClick={handleLogout}>Deslogar</a>
+                ) : (
+                    <Link to="/autenticacao" className="my-aorus">Logar</Link>
+                )}
             </div>
         </header>
     );

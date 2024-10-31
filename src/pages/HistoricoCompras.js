@@ -21,5 +21,6 @@ export default function HistoricoCompras() {
       </main>
       <Footer />
     </div>
+
   );
 }
