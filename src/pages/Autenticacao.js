@@ -37,7 +37,7 @@ export default function Autenticacao() {
           <button onClick={handleSignIn} className="btn-login btn-primary">logar</button>
         </div>
         <div className="second-column">
-          <h2 className="title title-second">Crie sua Conta</h2>
+          <h2 className="title title-second">Cadastre sua Conta</h2>
           <br/>
           <form className="form">
             <label className="label-input">

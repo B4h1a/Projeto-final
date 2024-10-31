@@ -195,3 +195,10 @@
   }
 
 }
+@media (max-width:720px){
+  .container-historico {
+display: flex;
+flex-direction: column;
+  }
+
+}
