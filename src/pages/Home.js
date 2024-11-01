@@ -10,10 +10,10 @@ import { useNavigate } from "react-router-dom";
 export default function Home() {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
-  
+
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  const [categorias, setCategorias] = useState({});
+  const [categorias, setCategorias] = useState([]);
 
   // Fetch de produtos e agrupamento por categorias
   useEffect(() => {
@@ -21,7 +21,7 @@ export default function Home() {
       try {
         const response = await api.get('/categorias');
         console.log(response);
-        
+
         setCategorias(response.data);
         setLoading(false);
       } catch (error) {
@@ -30,10 +30,10 @@ export default function Home() {
       }
     };
     fetchProdutos();
-  },[]);
+  }, []);
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const slideTime = 5;
+  const slideTime = 5; // Tempo em segundos para cada slide
   const [timeLeft, setTimeLeft] = useState(slideTime);
   const images = [
     "https://www.aorus.com/image/banner/OLED_Winners%20Never%20Settle-1711676595.jpg",
@@ -51,13 +51,20 @@ export default function Home() {
         return prev - 1;
       });
     }, 1000);
+
     return () => clearInterval(interval);
   }, []);
 
   const handleDotClick = (index) => {
-    setCurrentIndex(index);
+    setCurrentIndex(index); // atualiza o slide atual e seleciona o dot correspondente
   };
 
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDrawer = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <div className="inicio">
       <Header />
@@ -70,7 +77,8 @@ export default function Home() {
                   <figure>
                     <img className="banner" src={image} alt="" />
                   </figure>
-                  <div className="timer" style={{ height: `${(timeLeft / slideTime) * 100}%` }}></div>
+                  <div className='timer2' style={{ height: '50%' }}></div>
+                  <div className="timer" style={{ height: `${(timeLeft / slideTime) * 50}%` }}></div>
                 </li>
               ))}
             </ul>
@@ -79,7 +87,7 @@ export default function Home() {
                 <li key={index}>
                   <label
                     onClick={() => handleDotClick(index)}
-                    className={currentIndex === index ? "selected" : ""}
+                    className={currentIndex === index ? 'selected' : ''}
                   ></label>
                 </li>
               ))}
@@ -87,6 +95,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+
 
       <div className="linhaP">
         <h1>Linha de Produtos</h1>
@@ -96,30 +105,22 @@ export default function Home() {
           jogadores para desafiar os limites sem medo e lutar enquanto subimos para a glória final!
         </p>
       </div>
+<div className="produto">
+  {categorias.map(categoria => (
+    <div key={categoria.id} className="nome">
+      <a href={`/categoria/${categoria.id}`} className="btn-produto btn-1-produto">
+        <div className="border-container">
+          <svg>
+            <rect x="0" y="0" fill="none" width="90%" height="90%" />
+          </svg>
+          <img className="ftproduto" src={categoria.imagem} alt={categoria.nome} />
+          <p style={{ textAlign: "center" }}>{categoria.nome}</p>
+        </div>
+      </a>
+    </div>
+  ))}
+</div>
 
-      {/* <div className="produto">
-        {loading ? (
-          <div>Carregando produtos...</div>
-        ) : error ? (
-          <p className="errorMessage">{error}</p>
-        ) : (
-          categorias.map((categoria) => (
-            <div key={categoria}>
-              <h2>{categoria}</h2>
-              <div className="categoriaProdutos">
-                {categorias[categoria].map((produto) => (
-                  <div key={produto.id} className="produtoCard" onClick={() => navigate('/produtos/${categoria.id}')}>
-                    <img src={produto.imagens[0]} alt={produto.nome} />
-                    <h3>{produto.nome}</h3>
-                    <p>{produto.descricao}</p>
-                    <p>Por: R${produto.preco}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))
-        )}
-      </div> */}
 
 
       <div className="gtx">
@@ -145,6 +146,6 @@ export default function Home() {
         </div>
       </div>
       <Footer />
-    </div>
+    </div >
   );
 }

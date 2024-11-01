@@ -24,6 +24,8 @@ export default function Autenticacao() {
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
 
+
+  
   const handleSignIn = () => setBodyClass("sign-in-js");
   const handleSignUp = () => setBodyClass("sign-up-js");
 

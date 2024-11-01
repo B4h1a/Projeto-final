@@ -164,11 +164,6 @@ export default function Perfil() {
                 Salvar
               </button>
             )}
-            {disabled && (
-              <button type="button" className="editButton" onClick={handleEdit}>
-                Editar Perfil
-              </button>
-            )}
           </form>
         </div>
 

@@ -1,4 +1,5 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from "react";
+import api from "../../services/api";
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 import '../../styles/home.css';
@@ -9,9 +10,31 @@ const Header = () => {
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false); // Controle do menu mobile
     const navigate = useNavigate();
 
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState("");
+    const [categorias, setCategorias] = useState([]);
+
+    // Fetch de produtos e agrupamento por categorias
+    useEffect(() => {
+      const fetchProdutos = async () => {
+        try {
+          const response = await api.get('/categorias');
+          console.log(response);
+  
+          setCategorias(response.data);
+          setLoading(false);
+        } catch (error) {
+          setError(error.response?.data?.message || "Erro desconhecido. Por favor, tente novamente.");
+          setLoading(false);
+        }
+      };
+      fetchProdutos();
+    }, []);
+
     const handleMenuClick = (menu) => {
         setActiveMenu(activeMenu === menu ? null : menu);
     };
+    
 
     const handleLogout = () => {
         logout(); // Desloga o usuário
@@ -38,10 +61,11 @@ const Header = () => {
                         {activeMenu === "produtos" && (
                             <div className="dropdown">
                                 <div className="submenu-container">
-                                    <Link to="/produto/:id">Placa Mãe</Link>
-                                    <Link to="/produto/:id">Placas de Vídeo</Link>
-                                    <Link to="/produto/:id">Computador</Link>
-                                    <Link to="/produto/:id">Monitor</Link>
+                                {categorias.map(categoria => (
+                                        <Link key={categoria.id} to={`/categoria/${categoria.id}`}>
+                                            {categoria.nome}
+                                        </Link>
+                                    ))}
                                 </div>
                             </div>
                         )}
@@ -69,7 +93,7 @@ const Header = () => {
                                 <Link to="/admin/usuarios">Gerenciar Usuários</Link>
                             </li>
                             <li className="menu-item">
-                                <Link to="/admin/produto">Adicionar Produto</Link>
+                                <Link to="/admin/adicionar-produto">Adicionar Produto</Link>
                             </li>
                         </>
                     )}
