@@ -17,6 +17,12 @@ body {
     background-position: center; 
 
 }
+.error{
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
 .margin-ne{
     display: flex;
     justify-content: center;

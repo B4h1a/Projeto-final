@@ -155,9 +155,10 @@ export default function Autenticacao() {
             </label>
             <button className="btn-login btn-tercery">Logar</button>
           </form>
+          {error && <p className="error">{error}</p>}
         </div>
       </div>
-      {error && <p className="error">{error}</p>}
+      
     </div>
   );
 }
