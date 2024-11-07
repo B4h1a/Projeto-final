@@ -1,6 +1,11 @@
 
 .container-usuarios {
     text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 h1 {
@@ -12,6 +17,10 @@ h1 {
 .user-info-usuarios {
     display: flex;
     margin-bottom: 20px;
+    background-color: #232323;
+    border-radius: 10px;
+    border: solid white 1px;
+    padding: 10px;
 }
 
 .user-avatar-usuarios {
@@ -23,15 +32,15 @@ h1 {
 
 .avatar-icon-usuarios {
     font-size: 5rem;
-    color: blue;
-    border: 2px solid blue;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border: 2px solid rgb(255, 255, 255);
     width: 300px;
     height: 350px;
     padding: 40px;
 }
 
 .user-details-usuarios, .permissions-usuarios {
-    width: 45%;
     color: white;
     text-align: left;
 }
@@ -40,6 +49,8 @@ h1 {
 
 .actions-usuarios {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: end;
+    gap: 30px;
     justify-content: space-around;
 }

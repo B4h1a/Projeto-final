@@ -3,7 +3,7 @@ import api from "../services/api";
 import { AuthContext } from "../contexts/AuthContext";
 import Header from "./Componentes/Header";
 import Footer from "./Componentes/Footer";
-import CartaoHistorico from "./Componentes/History";
+import CarrinhoHistoricoCompras from "./Componentes/CartaoHistoricoCompras";
 import '../styles/perfil.css';
 
 
@@ -167,12 +167,10 @@ export default function Perfil() {
           </form>
         </div>
 
-        <h1 className="historico">Carrinho de Compras</h1>
+        <h1 className="historico">Histórico de Compras</h1>
         <div className="fica-historico">
-          <CartaoHistorico />
-          <CartaoHistorico />
-          <CartaoHistorico />
-          <CartaoHistorico />
+          <CarrinhoHistoricoCompras/>
+          <CarrinhoHistoricoCompras/>
         </div>
       </main>
       <Footer />

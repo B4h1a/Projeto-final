@@ -1,47 +1,49 @@
-import React from "react";
-import Header from './Componentes/Header';
+import React, { useEffect, useState } from 'react'; 
+import { useParams } from 'react-router-dom';
+import api from '../services/api';
+import Header from "./Componentes/Header";
 import Footer from "./Componentes/Footer";
-import '../styles/pagina-produto.css';
+import '../styles/produto.css';
+import Cartao from "./Componentes/Cartao";
 
-export default function Produtos() {
-  return (
-    <div className="product-page">
-      <Header />
-      <main className="product-main">
-        <h1 className="product-name">Nome Do Produto</h1>
-        
-        <div className="product-info">
-          <div className="product-image-container">
-            <div className="product-image" />
-          </div>
-          <div className="product-details">
-            <p className="product-title">
-              Vendido e entregue por: BITZONE |
-              <span className="in-stock">Em estoque</span>
-            </p>
-            <p className="product-shipping">
-              Frete grátis
-              <span className="cep-info"> - Consulte disponibilidade de seu CEP</span>
-            </p>
-            <p className="product-price">DE: R$15.554,44</p>
-            <p className="product-price">
-              POR: <span className="discount-price">R$13.299,44</span>
-            </p>
-            <a href="/finalizar-compra">
-              <button className="button-50" role="button">Comprar</button>
-            </a>
-            <p className="product-discount">À vista no PIX com até 10% OFF</p>
-            <p className="product-payment">Em até 10x de R$1.399,90 sem juros no cartão</p>
-            <p className="product-payment">Ou em 1x no cartão com até 30% OFF</p>
-          </div>
-        </div>
+export default function Produto() {
+    const { id } = useParams(); // Captura o ID da URL
+    const [produtos, setProdutos] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState('');
 
-        <div className="product-description">
-          <h2>Detalhe do Produto</h2>
-          <p>aaaaaaaaaaaaaaaaaaaaaaaaa</p>
-        </div>
-      </main>
-      <Footer />
-    </div>
-  );
+    useEffect(() => {
+      const fetchProdutos = async () => {
+        try {
+          const response = await api.get('/produtos'); // Obtém todos os produtos
+          // Filtra os produtos com base no ID da categoria
+          const produtosFiltrados = response.data.filter(produto => produto.categoriaId === Number(id));
+          setProdutos(produtosFiltrados);
+        } catch (error) {
+          setError('Erro ao carregar produtos. Tente novamente.');
+        } finally {
+          setLoading(false);
+        }
+      };
+      fetchProdutos();
+    }, [id]); // Executa a busca quando o ID muda
+
+    if (loading) return <div>Carregando...</div>;
+    if (error) return <div>{error}</div>;
+
+    return (
+      <div style={{display:"flex", flexDirection:"column", justifyContent:"space-between", minHeight:"100vh"}}>
+        <Header/>
+        <main style={{flex:1, marginTop:60, backgroundColor:"black"}}>
+          <div className="linhaCartao">
+            {produtos.map(produto => (
+              <Cartao key={produto.id} produto={produto} />
+            ))}
+          </div>
+          <br></br>
+          <br></br>
+        </main>
+        <Footer/>
+      </div>
+    );
 }

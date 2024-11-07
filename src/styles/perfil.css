@@ -44,12 +44,12 @@
 }
 .historico-ne{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
 }
 .fica-historico{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
 }
 .cartao-profile{
@@ -57,34 +57,8 @@
     width: 330px;
     height: 330px;
 }
-.container-historico {
-    display: flex;
-    padding: 16px;
-    align-items: flex-start; /* Alinha o conteúdo no topo */
-    width: calc(50% - 16px); /* Ajustado para que ambas caibam lado a lado */
-  }
-  
-  .left-historico {
-    background-color: #333;
-    width: 350px;
-    height: 340px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3em;
-  }
-  
-  .right-historico {
-    color: white;
-    width: 300px;
-    height: auto; /* Ajusta a altura automaticamente */
-    margin-left: 20px; /* Adiciona espaço entre as colunas */
-  }
-  
-  .right-historico p {
-    margin-top: 10px;
-    font-size: 14px;
-  }
+
+
 
 .button-50,
 .button-50:after {

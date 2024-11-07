@@ -12,24 +12,24 @@ export default function Footer(){
           <div className="column-footer">
             <h3>CATEGORIAS</h3>
             <ul>
-              <li><a href="#">Placas-Mãe</a></li>
-              <li><a href="#">Placas De Vídeo</a></li>
-              <li><a href="#">Monitores</a></li>
-              <li><a href="#">Computador</a></li>
+              <li><a className='a-footer'>Placas-Mãe</a></li>
+              <li><a className='a-footer'>Placas De Vídeo</a></li>
+              <li><a className='a-footer'>Monitores</a></li>
+              <li><a className='a-footer'>Computador</a></li>
             </ul>
           </div>
           <div className="column-footer">
             <h3>PRODUTO MAIS VENDIDOS</h3>
             <ul>
-              <li><a href="#">Notícias</a></li>
-              <li><a href="#">Eventos</a></li>
+              <li><a className='a-footer' >Placa Mãe</a></li>
+              <li><a className='a-footer' >Computador</a></li>
             </ul>
           </div>
           <div className="column-footer">
             <h3>SERVIÇO</h3>
             <ul>
-              <li><a href="#">Informações de Garantia</a></li>
-              <li><a href="#">Registo de Produto</a></li>
+              <li><a className='a-footer'>Informações de Garantia</a></li>
+              <li><a className='a-footer'>Registo de Produto</a></li>
             </ul>
           </div>
         </div>

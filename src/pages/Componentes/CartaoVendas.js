@@ -1,34 +1,23 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import api from "../../services/api";
-import { AuthContext } from "../../contexts/AuthContext";
-import '../../styles/vendas.css';
+import { useNavigate } from "react-router-dom"; // Navegação entre páginas
+import api from "../../services/api"; // API para fazer as requisições
+import { AuthContext } from "../../contexts/AuthContext"; // Para acessar o contexto de autenticação
+import '../../styles/vendas.css'; // Estilo do componente
 
+export default function VendasCard({ vendas }) {
+  const { user } = useContext(AuthContext); // Pega o usuário logado
+  const [loading, setLoading] = useState(true); // Estado de carregamento
+  const [error, setError] = useState(""); // Estado de erro
+  const navigate = useNavigate(); // Usar para navegação
 
-export default function VendasCard() {
-  const { user } = useContext(AuthContext);
-  const [vendas, setVendas] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
-  const navigate = useNavigate();
-
+  // Hook useEffect para carregar as vendas
   useEffect(() => {
-    const fetchVendas = async () => {
-      try {
-        const response = await api.get("/vendas");
-        setVendas(response.data);
-        setLoading(false);
-      } catch (error) {
-        if (error.response && error.response.data && error.response.data.message) {
-          setError(error.response.data.message);
-        } else {
-          setError("Erro desconhecido. Por favor, tente novamente.");
-        }
-      }
-    };
-
-    fetchVendas();
-  }, [user.token]);
+    if (user && user.token) {
+      setLoading(false);
+    } else {
+      setError("Usuário não autenticado.");
+    }
+  }, [user]);
 
   if (loading) {
     return <p>Carregando vendas...</p>;
@@ -44,7 +33,7 @@ export default function VendasCard() {
         vendas.map((venda) => (
           <div key={venda.id} className="clearfix-vendas">
             <div className="left-section-vendas">
-              <img src="https://via.placeholder.com/150" alt="Icon" />
+              <img src="https://via.placeholder.com/150" alt="Produto" />
               <div className="order-info">
                 <p><strong>Produto:</strong> {venda.produto.nome}</p>
                 <p><strong>Preço Total:</strong> R$ {venda.total}</p>
@@ -52,6 +41,7 @@ export default function VendasCard() {
             </div>
             <div className="right-section-vendas">
               <div className="status-vendas">
+                {/* Status do pedido */}
                 <span className="green">Pedido Concluído</span>
                 <span className="red">Pedido Cancelado</span>
                 <span className="yellow">Pedido Enviado</span>
@@ -71,7 +61,7 @@ export default function VendasCard() {
               </div>
               <button
                 className="detailsButton"
-                onClick={() => navigate(`/admin/vendas/${venda.id}`)}
+                onClick={() => navigate(`/admin/vendas/${venda.id}`)} // Navega para os detalhes da venda
               >
                 Ver Detalhes
               </button>

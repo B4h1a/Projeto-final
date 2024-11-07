@@ -9,7 +9,6 @@ import Produtos from "../pages/Produtos";
 import FinalizarCompra from "../pages/FinalizarCompra";
 import Carrinho from "../pages/Carrinho";
 import Perfil from "../pages/Perfil";
-import HistoricoCompras from "../pages/HistoricoCompras";
 import Vendas from "../pages/Vendas";
 import DetalhesVenda from "../pages/AdicionarProduto";
 import Usuarios from "../pages/Usuarios";
@@ -22,15 +21,15 @@ export default function AppRoutes() {
         {/* Rotas públicas */}
         <Route path="/" element={<Home />} />
         <Route path="/autenticacao" element={<Autenticacao />} />
-        <Route path="/categoria/:id" element={<DetalhesProduto />} />
-        <Route path="/produto" element={<Produtos />} />
+        <Route path="/categoria/:id" element={<Produtos />} />
+        <Route path="/produto/:id" element={<DetalhesProduto />} />
         <Route path="/finalizar-compra" element={<FinalizarCompra/>}/>
 
         {/* Rotas protegidas (apenas usuários logados) */}
         <Route element={<PrivateRoutes />}>
         <Route path="/carrinho" element={<Carrinho />} />
         <Route path="/perfil" element={<Perfil />} />
-        <Route path="/historico-compras" element={<HistoricoCompras />} />
+        <Route path="/carrinho-compras" element={<Carrinho />} />
         </Route>
 
         {/* Rotas protegidas de admin (apenas administradores) */}

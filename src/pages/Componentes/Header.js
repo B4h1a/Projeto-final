@@ -16,25 +16,25 @@ const Header = () => {
 
     // Fetch de produtos e agrupamento por categorias
     useEffect(() => {
-      const fetchProdutos = async () => {
-        try {
-          const response = await api.get('/categorias');
-          console.log(response);
-  
-          setCategorias(response.data);
-          setLoading(false);
-        } catch (error) {
-          setError(error.response?.data?.message || "Erro desconhecido. Por favor, tente novamente.");
-          setLoading(false);
-        }
-      };
-      fetchProdutos();
+        const fetchProdutos = async () => {
+            try {
+                const response = await api.get('/categorias');
+                console.log(response);
+
+                setCategorias(response.data);
+                setLoading(false);
+            } catch (error) {
+                setError(error.response?.data?.message || "Erro desconhecido. Por favor, tente novamente.");
+                setLoading(false);
+            }
+        };
+        fetchProdutos();
     }, []);
 
     const handleMenuClick = (menu) => {
         setActiveMenu(activeMenu === menu ? null : menu);
     };
-    
+
 
     const handleLogout = () => {
         logout(); // Desloga o usuário
@@ -46,8 +46,8 @@ const Header = () => {
             <div className="logo">
                 <a href="/">BITZONE</a>
             </div>
-            <div 
-                className="mobile-menu-icon" 
+            <div
+                className="mobile-menu-icon"
                 onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
             >
                 ☰
@@ -61,7 +61,7 @@ const Header = () => {
                         {activeMenu === "produtos" && (
                             <div className="dropdown">
                                 <div className="submenu-container">
-                                {categorias.map(categoria => (
+                                    {categorias.map(categoria => (
                                         <Link key={categoria.id} to={`/categoria/${categoria.id}`}>
                                             {categoria.nome}
                                         </Link>
@@ -77,13 +77,17 @@ const Header = () => {
                             <li className="menu-item">
                                 <Link to="/perfil">Meu Perfil</Link>
                             </li>
-                            <li className="menu-item">
-                                <Link to="/historico-compras">Histórico</Link>
-                            </li>
+                           
                         </>
                     )}
 
+
                     {/* Links visíveis apenas para Admin */}
+                    {user && user.role !== "ADMIN" && (
+                        <li className="menu-item">
+                            <Link to="/carrinho">Carrinho</Link>
+                        </li>
+                    )}
                     {user && user.role === "ADMIN" && (
                         <>
                             <li className="menu-item">
