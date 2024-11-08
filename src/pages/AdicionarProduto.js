@@ -62,7 +62,6 @@ export default function DetalhesVenda() {
         },
       });
       setSuccessMessage("Produto criado com sucesso!");
-      navigate("/produtos");
     } catch (error) {
       setError("Erro ao criar o produto. Tente novamente.");
     }

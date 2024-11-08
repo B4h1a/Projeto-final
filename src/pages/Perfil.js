@@ -3,9 +3,9 @@ import api from "../services/api";
 import { AuthContext } from "../contexts/AuthContext";
 import Header from "./Componentes/Header";
 import Footer from "./Componentes/Footer";
-import CarrinhoHistoricoCompras from "./Componentes/CartaoHistoricoCompras";
-import '../styles/perfil.css';
+import foto from '.././assets/images/profile-perfil.png'
 
+import "../styles/perfil.css";
 
 export default function Perfil() {
   const [formData, setFormData] = useState({
@@ -24,8 +24,10 @@ export default function Perfil() {
   const [error, setError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [disabled, setDisabled] = useState(true);
+  const [historicoCompras, setHistoricoCompras] = useState([]);
   const { user, loading } = useContext(AuthContext);
 
+  // Buscar dados do perfil
   useEffect(() => {
     if (!user || loading) {
       return;
@@ -55,6 +57,26 @@ export default function Perfil() {
     };
 
     fetchPerfil();
+  }, [user, loading]);
+
+  // Buscar histórico de compras
+  useEffect(() => {
+
+    const fetchHistoricoCompras = async () => {
+      try {
+        const responseHistorico = await api.get(`/pedidos?userId=${user.id}`, {
+        });
+        console.log("Historico",responseHistorico);
+        
+        setHistoricoCompras(responseHistorico.data);
+      } catch (error) {
+        setError(
+          error.response?.data?.message || "Erro ao carregar histórico de compras."
+        );
+      }
+    };
+
+    fetchHistoricoCompras();
   }, [user, loading]);
 
   const handleChange = (e) => {
@@ -93,9 +115,7 @@ export default function Perfil() {
       <Header />
       <main style={{ flex: 1, marginTop: 60, backgroundColor: "black" }}>
         <div className="container-profile">
-          <div className="profile-image">
-            Foto
-          </div>
+        <img className="avatar-icon-usuarios" src={foto} alt="" />
 
           <form onSubmit={handleSave}>
             <div className="input-group-profile">
@@ -147,7 +167,7 @@ export default function Perfil() {
             </div>
 
             <div className="input-group-profile">
-              <h1 className="text-perfil">Endereço Completo</h1>
+              <h1 className="text-perfil">Logradouro</h1>
               <input
                 className="input-perfil"
                 type="text"
@@ -160,18 +180,37 @@ export default function Perfil() {
             </div>
 
             {!disabled && (
-              <button type="submit" className="saveButton">
-                Salvar
-              </button>
+              <button type="submit" className="saveButton">Salvar</button>
             )}
           </form>
         </div>
 
-        <h1 className="historico">Histórico de Compras</h1>
-        <div className="fica-historico">
-          <CarrinhoHistoricoCompras/>
-          <CarrinhoHistoricoCompras/>
-        </div>
+        {user && user.role !== "ADMIN" && (
+          <>
+            <h1 className="historico">Histórico de Compras</h1>
+            <div className="fica-historico">
+              {historicoCompras.length > 0 ? (
+                historicoCompras.map((venda) => (
+                  <div key={venda.id} className="cartao-historico">
+                    <p><strong>Data:</strong> {new Date(venda.data).toLocaleDateString()}</p>
+                    <p><strong>Total:</strong> R$ {(venda.total / 100).toFixed(2)}</p>
+                    <p><strong>Método de Pagamento:</strong> {venda.metodoPagamento}</p>
+                    <h3>Itens Comprados:</h3>
+                    {venda.itens.map((item) => (
+                      <div key={item.id} className="item-historico">
+                        <p><strong>Produto ID:</strong> {item.produtoId}</p>
+                        <p><strong>Quantidade:</strong> {item.quantidade}</p>
+                        <p><strong>Preço:</strong> R$ {(item.preco).toFixed(2)}</p>
+                      </div>
+                    ))}
+                  </div>
+                ))
+              ) : (
+                <p style={{color:'white'}}>Nenhuma compra encontrada.</p>
+              )}
+            </div>
+          </>
+        )}
       </main>
       <Footer />
     </div>

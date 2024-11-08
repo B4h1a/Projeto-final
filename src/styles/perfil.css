@@ -150,6 +150,75 @@
     transform: translate(0);
   }
 }
+/* Estilo da página de Histórico de Compras */
+.historico {
+  padding: 40px 0;
+  color: white;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Contêiner principal para o histórico */
+.fica-historico {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Cartão de cada compra */
+.cartao-historico {
+  background-color: #232323;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cartao-historico:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo para os itens comprados */
+.item-historico {
+  background-color: #2c2c2c;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+}
+
+.item-historico p {
+  margin: 5px 0;
+  color: #ddd;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 800px) {
+  .fica-historico {
+      flex-direction: column;
+      gap: 15px;
+  }
+
+  .cartao-historico {
+      width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .cartao-historico {
+      padding: 15px;
+  }
+
+  .historico {
+      font-size: 24px;
+  }
+}
+
 
 @media (min-width: 768px) {
   .button-50,

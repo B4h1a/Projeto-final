@@ -12,7 +12,7 @@ export default function Carrinho() {
   const [carrinho, setCarrinho] = useState([]); // Estado inicial como array
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true); // Loading para requisição do carrinho
-  const [metodoPagamento, setMetodoPagamento] = useState(""); // Estado para o método de pagamento
+  const [metodoPagamento, setMetodoPagamento] = useState(); // Estado para o método de pagamento
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export default function Carrinho() {
         const response = await api.get("/carrinho", {
           params: { userId: user.id }, // Passa o userId como parâmetro para buscar os dados corretos
         });
-        
+
         setCarrinho(response.data["produtos-carrinho"] || []); // Atualiza o carrinho com os dados da API
         setLoading(false); // Finaliza o carregamento
       } catch (error) {
@@ -36,11 +36,11 @@ export default function Carrinho() {
       }
     };
 
-    
+
     fetchCarrinho(); // Chama a função para carregar o carrinho
   }, [user, authLoading]); // Recarrega quando o usuário ou o estado de loading mudarem
 
-  console.log("carrinho",carrinho);
+  console.log("carrinho", carrinho);
   // Função para atualizar a quantidade do produto no carrinho
   const handleQuantidadeChange = async (produtoId, quantidade) => {
     setCarrinho((prevCarrinho) =>
@@ -65,8 +65,8 @@ export default function Carrinho() {
     }
   };
 
-  
-  
+
+
   // Função para deletar um item do carrinho
   const handleDeletarItem = async (produtoId) => {
     try {
@@ -82,15 +82,14 @@ export default function Carrinho() {
       setError("Erro ao remover item. Tente novamente.");
     }
   };
-  
+
 
   // Função para criar o pedido
   const handleCriarPedido = async () => {
     if (!metodoPagamento) {
       setError("Por favor, selecione um método de pagamento.");
-      return;
+      return; // Não continua a execução do código se não houver método de pagamento
     }
-
 
     try {
       // Chama a API para criar o pedido com o método de pagamento
@@ -113,55 +112,62 @@ export default function Carrinho() {
 
   return (
     <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", minHeight: "100vh" }} >
-    <>
-      <Header />
-      <main style={{ flex: 1, backgroundColor: "black" }}>
-        <h1>Meu Carrinho</h1>
-        {carrinho.length === 0 ? (
-          <p>Seu carrinho está vazio.</p> // Exibe mensagem caso o carrinho esteja vazio
-        ) : (
-          <>
-            <ul>
-              {carrinho.map((item) => (
-                <CarrinhoCartao
-                  key={item.produtoId}
-                  produto={item.produto}
-                  quantidade={item.quantidade}
-                  preco={item.produto.preco}
-                  imagem={item.produto.imagens[0]}
-                  onQuantidadeChange={handleQuantidadeChange}
-                  onDeletarItem={handleDeletarItem}
-                />
-              ))}
-            </ul>
+      <>
+        <Header />
+        <main style={{ flex: 1, backgroundColor: "black" }}>
+          <h1>Meu Carrinho</h1>
+          {carrinho.length === 0 ? (
+            <p>Seu carrinho está vazio.</p> // Exibe mensagem caso o carrinho esteja vazio
+          ) : (
+            <>
+              <ul>
+                {carrinho.map((item) => (
+                  <CarrinhoCartao
+                    key={item.produtoId}
+                    produto={item.produto}
+                    quantidade={item.quantidade}
+                    preco={item.produto.preco}
+                    imagem={item.produto.imagens[0]}
+                    onQuantidadeChange={handleQuantidadeChange}
+                    onDeletarItem={handleDeletarItem}
+                  />
+                ))}
+              </ul>
 
-            {/* Campo de seleção do método de pagamento */}
-            <div className="centro-carrinho">
-              <label className="label-carrinho2">
-                Método de Pagamento:
-              </label>
-              <select
-                className="select-carrinho"
-                value={metodoPagamento}
-                onChange={(e) => setMetodoPagamento(e.target.value)}
-              >
-                <option value="">Selecione</option>
-                <option value="Cartão de Crédito">Cartão de Crédito</option>
-                <option value="Boleto">Boleto</option>
-                <option value="Pix">Pix</option>
-              </select>
-              <br />
-              {/* Botão para enviar o pedido */}
-              <button className="button-50" onClick={handleCriarPedido}>
-                Finalizar Pedido
-              </button>
-            </div>
-          </>
-        )}
-        {error && <p>{error}</p>}
-      </main>
-      <Footer />
-    </>
+              {/* Campo de seleção do método de pagamento */}
+              <div className="centro-carrinho">
+                <label className="label-carrinho2">
+                  Método de Pagamento:
+                </label>
+                <select
+                  className="select-carrinho"
+                  value={metodoPagamento}
+                  onChange={(e) => setMetodoPagamento(e.target.value)}
+                  required
+                >
+                  <option selected disabled value="">Selecione</option>
+                  <option value="Cartão de Crédito">Cartão de Crédito</option>
+                  <option value="Boleto">Boleto</option>
+                  <option value="Pix">Pix</option>
+                </select>
+                {error && (<h1 style={{ color: 'white' }}>{error}</h1>)}
+
+                <br />
+                {/* Botão para enviar o pedido */}
+                <button
+                  className="button-50"
+                  onClick={handleCriarPedido}
+                  disabled={!metodoPagamento} // Desabilita o botão caso nenhum método de pagamento tenha sido selecionado
+                >
+                  Finalizar Pedido
+                </button>
+              </div>
+            </>
+          )}
+
+        </main>
+        <Footer />
+      </>
     </div>
   );
 }

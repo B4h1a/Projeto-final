@@ -62,7 +62,7 @@ export default function Usuarios() {
   return (
     <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", minHeight: "100vh" }}>
       <Header />
-      <main style={{ flex: 1, marginTop: 66, backgroundColor: "black" }}>
+      <main style={{ flex: 1, marginTop: 60, backgroundColor: "black" }}>
         <div className="container-usuarios">
           <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'white', textAlign: 'center' }}>GESTÃO DE USUÁRIOS</h1>
           {usuarios.length > 0 ? (

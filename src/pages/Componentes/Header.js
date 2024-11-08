@@ -3,6 +3,8 @@ import api from "../../services/api";
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 import '../../styles/home.css';
+import { HiOutlineLogout } from "react-icons/hi";
+import { FaUser } from "react-icons/fa";
 
 const Header = () => {
     const { user, logout } = useContext(AuthContext); // Pega o usuário logado e a função logout
@@ -106,9 +108,9 @@ const Header = () => {
 
             <div className="extra-menu">
                 {user ? (
-                    <a href="/" className="my-aorus" onClick={handleLogout}>Deslogar</a>
+                    <a href="/" className="my-aorus" onClick={handleLogout}><HiOutlineLogout size={30} /></a>
                 ) : (
-                    <Link to="/autenticacao" className="my-aorus">Logar</Link>
+                    <Link to="/autenticacao" className="my-aorus"><FaUser size={25} /></Link>
                 )}
             </div>
         </header>

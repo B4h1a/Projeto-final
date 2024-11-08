@@ -149,26 +149,6 @@
 
 
 
-    .extra-menu .my-aorus {
-        border: 1px solid white;
-        padding: 5px 10px;
-        display: flex;
-        align-items: center;
-    }
-
-
-
-
-    .extra-menu .my-aorus .icon {
-        margin-right: 5px;
-        width: 20px;
-        height: 20px;
-        background: url("https://cdn-icons-png.flaticon.com/512/124/124727.png") no-repeat center center;
-        background-size: contain;
-    }
-
-
-
 
     .extra-menu a:hover {
         color: #0F4AA7;

@@ -4,9 +4,10 @@ import Header from "./Componentes/Header";
 import Footer from "./Componentes/Footer";
 import api from "../services/api";
 import '../styles/pagina-produto.css';
+import { FiArrowLeftCircle } from "react-icons/fi";
 import { AuthContext } from "../contexts/AuthContext"; // Para acessar o usuário logado
 
-export default function DetalhesProdutos() {
+export default function DetalhesProdutos({ categoria }) {
   const { id } = useParams();
   const [produto, setProduto] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -42,7 +43,6 @@ export default function DetalhesProdutos() {
         quantidade: 1, // Quantidade a ser adicionada
       });
       alert("Produto adicionado ao carrinho com sucesso!");
-      navigate("/carrinho"); // Redireciona para o carrinho
     } catch (error) {
       setError('Erro ao adicionar o produto ao carrinho.');
     }
@@ -57,11 +57,19 @@ export default function DetalhesProdutos() {
       <main className="product-main">
         {produto && (
           <>
-            <h1 className="product-name">{produto.nome}</h1>
+            <div style={{display:'flex', flexDirection:'row'}}>            
+              <div className="extra-menu-voltar-product">
+              <a href="#" onClick={() => navigate(-1)} className="my-tora">
+                <FiArrowLeftCircle size={30} />
+              </a>
+            </div>
+              <h1 className="product-name">{produto.nome}</h1></div>
+
             <div className="product-info">
               <div className="product-image-container">
+
                 <img
-                  className="product-image"
+                  className="product-image-details"
                   src={produto.imagens[0]}
                   alt={produto.nome}
                 />
@@ -78,7 +86,7 @@ export default function DetalhesProdutos() {
                   <span className="cep-info"> - Consulte disponibilidade de seu CEP</span>
                 </p>
                 <p className="product-price">
-                  POR: <span className="discount-price">R${produto.preco}</span>
+                  POR: <span className="discount-price">R${produto.preco.toFixed(2)}</span>
                 </p>
                 {user && user.role !== "ADMIN" && (
                   <button

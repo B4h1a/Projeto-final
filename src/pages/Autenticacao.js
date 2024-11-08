@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import api from "../services/api";
 import { AuthContext } from "../contexts/AuthContext";
 import "../styles/autenticacao.css";
+import { PiEyeClosedBold, PiEye  } from "react-icons/pi";
+import { FiArrowLeftCircle } from "react-icons/fi";
 
 export default function Autenticacao() {
   const [bodyClass, setBodyClass] = useState("");
@@ -23,7 +25,12 @@ export default function Autenticacao() {
   const [error, setError] = useState("");
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
 
+  // Função para alternar a visibilidade da senha
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevState) => !prevState);
+  };
 
   
   const handleSignIn = () => setBodyClass("sign-in-js");
@@ -84,7 +91,7 @@ export default function Autenticacao() {
     <div className="container-autenticacao">
       <div className="extra-menu-voltar">
         <a href="/" className="my-tora">
-          Voltar
+        <FiArrowLeftCircle size={30} />
         </a>
       </div>
       <div className="content first-content">
@@ -129,7 +136,21 @@ export default function Autenticacao() {
             </label>
             <div className="margin-ne">
             <label className="label-input">
-              <input type="text" placeholder="Senha" name="password" onChange={handleRegisterChange} required />
+            <input
+        type={showPassword ? "text" : "password"}
+        placeholder="Senha"
+        name="password"
+        onChange={handleRegisterChange}
+        required
+        
+      />      <button
+      type="button"
+      onClick={togglePasswordVisibility}
+      className="toggle-password"
+    >
+      {showPassword ?  <PiEye /> : <PiEyeClosedBold />}
+    </button>
+
             </label>
             <button className="btn-login btn-second">Cadastrar</button>
             </div>
@@ -150,8 +171,23 @@ export default function Autenticacao() {
             <label className="label-input">
               <input type="text" placeholder="Email" name="email" onChange={handleLoginChange} required />
             </label>
+
             <label className="label-input">
-              <input type="text" placeholder="Senha" name="password" onChange={handleLoginChange} required />
+            <input
+        type={showPassword ? "text" : "password"}
+        placeholder="Senha"
+        name="password"
+        onChange={handleLoginChange}
+        required
+        
+      />      <button
+      type="button"
+      onClick={togglePasswordVisibility}
+      className="toggle-password"
+    >
+      {showPassword ?  <PiEye /> : <PiEyeClosedBold />}
+    </button>
+
             </label>
             <button className="btn-login btn-tercery">Logar</button>
           </form>

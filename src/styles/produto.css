@@ -49,9 +49,9 @@
   }
   
   .product-title {
-    align-items: center;
+    align-items: start;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     font-size: 34px;
     font-weight: bold;
     margin-bottom: 10px;
@@ -119,6 +119,7 @@
     transition: transform 0.3s ease; /* Suaviza a transformação */
     transform: scale(1); /* Tamanho normal */
     color: white;
+    width: 400px;
 
 
 }

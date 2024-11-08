@@ -1,13 +1,14 @@
 import React from "react";
+import foto from '../../assets/images/profile.png'
 import '../../styles/usuarios.css';
 
 export default function CartaoUsuario({ usuario, onEdit, onDelete }) {
   return (
     <div className="user-info-usuarios">
       <div className="user-avatar-usuarios">
-        <div className="avatar-icon-usuarios">Foto Né</div>
+        <img className="avatar-icon-usuarios" src={foto} alt="" />
       </div>
-      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: "space-between",padding:10}}>
+      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: "space-between",width:400}}>
         <div style={{ fontSize: "1.2rem" }} className="user-details-usuarios">
           <h2>Nome de Usuário: {usuario.nome}</h2>
           <p>Email: {usuario.email}</p>
