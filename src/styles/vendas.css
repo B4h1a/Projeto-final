@@ -105,3 +105,147 @@ justify-content: space-between;
         width: 100%;
     }
 }
+/* Estilos para telas menores que 420px */
+@media screen and (max-width: 420px) {
+    .container-vendas {
+      justify-content: flex-start;
+    }
+  
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+  
+    .venda-cartao {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+  
+    .status-vendas {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+    }
+  
+    .status-vendas h1 {
+      font-size: 18px;
+    }
+  
+    .status-vendas span {
+      font-size: 16px;
+    }
+  
+    .details-vendas {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .section-vendas {
+      padding: 10px;
+    }
+  
+    .section-vendas h3 {
+      font-size: 1rem;
+    }
+  
+    .section-vendas p {
+      font-size: 0.9rem;
+    }
+  
+    .section-vendas-lista {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .item-pedido {
+      width: 100%;
+      padding: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .item-pedido img {
+      width: 80px;
+      height: 80px;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    .item-pedido p {
+      font-size: 0.85rem;
+    }
+  }
+  
+  @media screen and (max-width: 760px) {
+    .container-vendas {
+      justify-content: flex-start;
+    }
+  
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+  
+    .venda-cartao {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+  
+    .status-vendas {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+    }
+  
+    .status-vendas h1 {
+      font-size: 18px;
+    }
+  
+    .status-vendas span {
+      font-size: 16px;
+    }
+  
+    .details-vendas {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .section-vendas {
+      padding: 10px;
+    }
+  
+    .section-vendas h3 {
+      font-size: 1rem;
+    }
+  
+    .section-vendas p {
+      font-size: 0.9rem;
+    }
+  
+    .section-vendas-lista {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .item-pedido {
+      width: 100%;
+      padding: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .item-pedido img {
+      width: 80px;
+      height: 80px;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    .item-pedido p {
+      font-size: 0.85rem;
+    }
+  }

@@ -9,7 +9,7 @@ export default function CarrinhoCartao({ produto, quantidade, preco, imagem, onQ
       </div>
       <div className="right-historico">
         <h3 className="h3-carrinho">{produto.nome}</h3>
-        <p className="p-carrinho">Preço: R${preco}</p>
+        <p className="p-carrinho">Preço: R${(preco).toFixed(2)}</p>
         <label className="label-carrinho">
           Quantidade:
           <input

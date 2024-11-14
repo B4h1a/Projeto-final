@@ -5,6 +5,7 @@ import { AuthContext } from '../../contexts/AuthContext';
 import '../../styles/home.css';
 import { HiOutlineLogout } from "react-icons/hi";
 import { FaUser } from "react-icons/fa";
+import Logo from '../../assets/images/BITZONE-PNG.jpg';
 
 const Header = () => {
     const { user, logout } = useContext(AuthContext); // Pega o usuário logado e a função logout

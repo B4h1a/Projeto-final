@@ -22,7 +22,6 @@
     height: auto;
     border-radius: 8px;
     object-fit: cover; /* Garante que a imagem ocupe o espaço corretamente */
-    background-color: #fff; /* Cor de fundo para a imagem */
 }
 
 .right-historico {
@@ -109,8 +108,74 @@ input[type="number"] {
     .right-historico {
         flex: 1;
     }
-
+    .h3-carrinho{
+        font-size: 20px;
+    }
     .produto-imagem {
         max-width: 120px; /* Ajusta a imagem para telas menores */
     }
+    .botoes {
+        display: flex;
+        align-items: end;
+        flex-direction: row;
+        height: 170px;
+        justify-content: space-between;
+        gap: 55px;
+    }
 }
+@media (max-width: 420px) {
+    .container-historico {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .left-historico {
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .produto-imagem {
+        width: 100%;
+        height: auto;
+        max-height: 120px; /* Reduz o tamanho da imagem */
+    }
+
+    .right-historico {
+        flex: 1;
+        width: 100%;
+    }
+
+    .h3-carrinho {
+        font-size: 1.2rem; /* Reduz o tamanho da fonte */
+    }
+
+    .p-carrinho {
+        font-size: 0.9rem; /* Ajusta o tamanho da fonte */
+    }
+
+    .label-carrinho,
+    .label-carrinho2 {
+        font-size: 0.75rem; /* Diminui a fonte para rótulos */
+        width: 100%;
+    }
+
+    .select-carrinho {
+        font-size: 0.85rem;
+        width: 100%;
+        max-width: 250px; /* Ajusta a largura do select */
+    }
+
+    input[type="number"] {
+        width: 40px;
+        font-size: 0.85rem;
+        padding: 5px;
+    }
+
+    .botoes {
+        flex-direction: row;
+        align-items: end;
+        height: auto; /* Remove a altura fixa */
+    }
+}
+

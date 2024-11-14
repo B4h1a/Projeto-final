@@ -10,7 +10,7 @@ export default function Cartao({produto}){
       <div className="cartao">
       <div className="ft-cartao">
         <img style={{ width: 280 }} src={produto.imagens[0]} alt={produto.nome} />
-        <h1 style={{fontSize:35}}>{produto.nome}</h1>
+        <h1 className='h1-cartao'>{produto.nome}</h1>
       </div>
       <div>
       <p style={{color:'white',fontSize:20,fontWeight:'bold'}}>R${produto.preco.toFixed(2)}</p>

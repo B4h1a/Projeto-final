@@ -193,7 +193,7 @@ export default function Perfil() {
                 historicoCompras.map((venda) => (
                   <div key={venda.id} className="cartao-historico">
                     <p><strong>Data:</strong> {new Date(venda.data).toLocaleDateString()}</p>
-                    <p><strong>Total:</strong> R$ {(venda.total / 100).toFixed(2)}</p>
+                    <p><strong>Total:</strong> R$ {(venda.total).toFixed(2)}</p>
                     <p><strong>Método de Pagamento:</strong> {venda.metodoPagamento}</p>
                     <h3>Itens Comprados:</h3>
                     {venda.itens.map((item) => (
