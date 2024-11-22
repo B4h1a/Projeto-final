@@ -198,7 +198,7 @@ export default function Perfil() {
                     <h3>Itens Comprados:</h3>
                     {venda.itens.map((item) => (
                       <div key={item.id} className="item-historico">
-                        <p><strong>Produto ID:</strong> {item.produtoId}</p>
+                        <p><strong>Produto:</strong> {item.produto.nome}</p>
                         <p><strong>Quantidade:</strong> {item.quantidade}</p>
                         <p><strong>Preço:</strong> R$ {(item.preco).toFixed(2)}</p>
                       </div>
